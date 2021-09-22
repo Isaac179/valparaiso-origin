@@ -1,0 +1,135 @@
+/**
+* ESTILOS BÁSICOS 
+* ---------------
+*
+* Estilos básicos de ultraligero
+* Edítalos o sobreescríbelos
+* 
+*/
+
+*{
+	@include border-sizing(border-box);
+	&::selection{ background: $color-destacado; }
+	&::-moz-selection{background: $color-destacado; }
+}
+
+html{font-size: $base-px;}
+
+html, body {height: 100%;}
+
+body {
+	position: relative;
+	font-family: $fuente-sans;
+	text-rendering: optimizeLegibility;  // mejor legibilidad
+	-webkit-font-smoothing: antialiased; // Hace la fuente más bonita
+	// font-size: $base-px;
+	background-color:$color-fondo;
+}
+
+strong{font-weight: bold;}
+
+
+
+img {-ms-interpolation-mode: bicubic;}
+.column, .columns .cuadro .row .cuadricula{
+	img{max-width:100%;}
+}
+p{
+	em{font-style: italic;}
+	@include p_gnl(); 
+}
+ol{
+	list-style: decimal;
+	margin-left: 1.55em;
+}
+ul{
+	list-style: disc;
+	margin-left: 1.1em;
+}
+
+/**
+* CLASES GLOBALES 
+* ---------------
+*
+* Algunos elementos están pre-estilisados
+* Usa estas clases para esilizar menús, botones, etc
+* Edita o sobreescribe lo que no te guste
+* 
+*/
+
+// Alineación texto
+.centrado{ text-align: center; }
+.derecha{ text-align: right; }
+.izquierda{ text-align: left; }
+.justificado{ text-align: justify; }
+
+
+// Quitar el margen o padding a alguna columna dependiendo el tamaño de pantalla
+.sin-mar-izq{margin-left: 0 !important;}
+@include respond-to(medio) {
+	.medio-sin-mar-izq{margin-left: 0 !important;}
+}
+@include respond-to(chico) {
+	.chico-sin-mar-izq{margin-left: 0 !important;}
+}
+
+.sin-mar-der{margin-right: 0 !important;}
+.sin-mar-btm{margin-bottom: 0 !important;}
+
+.sin-pad-btm{padding-bottom: 0 !important;}
+
+// Botones
+
+
+// El MENU
+
+ 
+	.mail{
+		@include respond-to(chico){ 
+			
+			display:none;
+		}
+		z-index: 100000;
+		position:fixed;
+		bottom:30px;
+		left:40px;
+		height:20px;
+		a{
+			color:$color-principal;
+			
+			display:inline-block;
+			text-align:left;
+			font-size:16px;
+			font-family:$fuente-sans;
+			font-weight:normal;
+			font-style:normal;
+			letter-spacing: 1px;
+			text-decoration:none;
+			
+	    	
+		}
+		a:hover{
+			text-decoration:none;
+			color:$color-principal;
+			@include respond-to(chico){ 
+				
+				color:white;
+			}
+		}
+		a:visited{
+			text-decoration:none;
+			color:$color-principal;
+			@include respond-to(chico){ 
+				
+				color:white;
+			}
+		}
+		padding-right:40px;
+		text-align:right;
+		font-size:14px;
+		font-family:$fuente-sans;
+		font-weight:normal ;
+		font-style:normal ;
+		letter-spacing: 1px;	
+	
+	}

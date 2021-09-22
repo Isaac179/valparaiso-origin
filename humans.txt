@@ -1,0 +1,19 @@
+/* DESIGN TEAM */
+  Team: Periferico
+  Contact: Estudio [at] periferico.info
+  Instagram: prfrc
+  From: Mexico City (CDMX), Mexico
+
+/* DVP TEAM */
+	Team:  Periferico
+	Contact: Estudio [at] periferico.info
+	Twitter: @estudio_periferico
+  Github: /prfrc
+  Website: http://estudio.periferico.info
+	From: Mexico City (CDMX), Mexico
+
+/* SITE */
+	
+	Doctype: HTML5
+  	CMS: Wordpress.org
+	IDE: Atom, Sublime Text, MAMP, CodeKit, Sequel Pro

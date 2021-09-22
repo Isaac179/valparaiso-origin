@@ -1,0 +1,4886 @@
+@charset "UTF-8";
+/**
+* Ultraligero Framework
+* ---------------------
+*
+* Desarrollado por El Cultivo
+* http://elcultivo.mx
+*
+*
+*
+* Usar ese archivo para customizar estilos
+* 
+**/
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+/* line 2, ../sass/reset.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 2, ../sass/reset.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 2, ../sass/reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 2, ../sass/reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 2, ../sass/reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 2, ../sass/reset.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none;
+}
+
+/* line 2, ../sass/reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**
+* SET UP VARS
+* -----------
+*
+* Antes de sobrescribir, échale un ojo a este file
+* Algunos estilos son fácilmente configurables 
+* con sólo cambiando el valor de las variables en _config.scss
+* 
+*/
+/**
+* MIXINS
+* ------
+* Agrega aquí tus mixins
+* 
+*/
+/**
+*  Especificar la fuentes personalizada para el diseño de la pagina
+*	
+*  @param string $font-family: nombre de la fuente
+*  @param string $font-filename: nombre del origen (archivo) que contiene la fuente
+*  @param string|number $font-weight: alto de la fuente. 
+*  @param string $font-style: estilo de la fuente. 
+*  @param string $font-stretch: anchura de la fuente. 
+*/
+/**
+* Devuelve tamaño de fuente con line-height y margin bottom.
+* 
+* @param number $font-size: (req) tamaño de la fuente
+* @param number $line-height: Alto de la interlínea. Si no le pasas número lo calcula 
+* @param bool/number $margin: Margen inferior. Si no le pasas número usa la interlínea
+*
+* la función tamano se encuentra en el archivo _funciones.scss
+*/
+/**
+*  imagen de fondo
+* 
+* @param string $file: nombre del origen (archivo) de la imagen
+* @param string $type: formato (extensión) de la imagen
+* @param number $width: Ancho de la imagen
+* @param number $height: Alto de la imagen
+*/
+/**
+* MIXINS LOCALES
+* ------
+* Agrega aquí tus mixins locales
+* 
+*/
+/**
+*  filtro para mostrar la imagen dentro de los límites fondo
+* 
+* @param string $file: nombre del origen (archivo) de la imagen
+* @param string $type: formato (extensión) de la imagen
+* @param number $width: Ancho de la imagen
+* @param number $height: Alto de la imagen
+*/
+/**
+*  Asigna el ancho a las columnas 
+* 
+* @param number $cols: numero de columnas 
+* @param string|number $respond-to: ajuste del tamaño de las media queries
+*
+* la función cada_col se encuentra en el archivo _funciones.scss
+*/
+/**
+* FUNCTIONS
+* ---------
+* Agrega aquí tus funciones 
+* 
+*/
+/**
+* Cuánto debe medir cada columna (unidad) 
+*
+* @param number $cuantas-cols: numero total de columnas 
+* @return number porcentaje del ancho de columnas
+*
+* Se usa -1 por la primer columna a la que se le quita el margen izquierdo 
+*/
+/**
+* Se usa en el Loop para crear todos los tamaños de columnas ej. .grade-12.column
+*
+* @param number $num: numero de la columna que se especifica
+* @return number porcentaje del ancho de la columna que se especifica
+*
+*/
+/**
+* Cuánto debe medir cada cuadro (unidad)
+*
+* @param number $cuantas-cols: numero total de cuadros 
+* @return number porcentaje del ancho de cuadros
+*
+* No se le resta porque todos tienen margen derecho
+*/
+/**
+* Se usa en el Loop para crear todos los tamaños de cuadros ej. .grade-12.column
+*
+* @param number $num: numero de cuadro que se especifica  
+* @return number porcentaje del ancho del cuadro que se especifica
+*
+*/
+/**
+* Calcula los margenes de la class centered
+*
+* @param number $num: numero de columna 
+* @return number porcentaje del tamaño de la class centered
+*
+*/
+/**
+* Crea el estilo para crear los espacios a la izquierda
+*
+* @param number $num: numero de columna 
+* @param boolean $first-child trigger agrenga un el margen de la ultima columna al caso seleccionado Por defecto false.
+* @return number porcentaje del tamaño empujar columnas 
+*
+*/
+/**
+* Generador de tamaños en función de la base 
+*
+* @param number $ratio: el número de veces que quieres multiplicar la base
+* @return number pixeles de referencia  
+*
+*/
+/**
+* Regresa el valor sin unidades
+*
+* @param number $num: valor a que se le quieran quitar las unidades 
+* @return number valor sin unidades 
+*
+*/
+/**
+* Crea el nombre de las class de las columnas 
+*
+* @param number $number: numero de columna 
+* @return string regresa las clases
+*
+*/
+/**
+* ESTILOS BÁSICOS 
+* ---------------
+*
+* Estilos básicos de ultraligero
+* Edítalos o sobreescríbelos
+* 
+*/
+/* line 10, ../sass/_base.scss */
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+/* line 12, ../sass/_base.scss */
+*::selection {
+  background: #993399;
+}
+/* line 13, ../sass/_base.scss */
+*::-moz-selection {
+  background: #993399;
+}
+
+/* line 16, ../sass/_base.scss */
+html {
+  font-size: 30px;
+}
+
+/* line 18, ../sass/_base.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 20, ../sass/_base.scss */
+body {
+  position: relative;
+  font-family: "Source", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  background-color: #f4f1ec;
+}
+
+/* line 29, ../sass/_base.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 33, ../sass/_base.scss */
+img {
+  -ms-interpolation-mode: bicubic;
+}
+
+/* line 35, ../sass/_base.scss */
+.column img, .columns .cuadro .row .cuadricula img {
+  max-width: 100%;
+}
+
+/* line 37, ../sass/_base.scss */
+p {
+  font-family: "Source", sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+  color: #330033;
+}
+/* line 38, ../sass/_base.scss */
+p em {
+  font-style: italic;
+}
+
+/* line 41, ../sass/_base.scss */
+ol {
+  list-style: decimal;
+  margin-left: 1.55em;
+}
+
+/* line 45, ../sass/_base.scss */
+ul {
+  list-style: disc;
+  margin-left: 1.1em;
+}
+
+/**
+* CLASES GLOBALES 
+* ---------------
+*
+* Algunos elementos están pre-estilisados
+* Usa estas clases para esilizar menús, botones, etc
+* Edita o sobreescribe lo que no te guste
+* 
+*/
+/* line 61, ../sass/_base.scss */
+.centrado {
+  text-align: center;
+}
+
+/* line 62, ../sass/_base.scss */
+.derecha {
+  text-align: right;
+}
+
+/* line 63, ../sass/_base.scss */
+.izquierda {
+  text-align: left;
+}
+
+/* line 64, ../sass/_base.scss */
+.justificado {
+  text-align: justify;
+}
+
+/* line 68, ../sass/_base.scss */
+.sin-mar-izq {
+  margin-left: 0 !important;
+}
+
+@media only screen and (max-width: 800px) {
+  /* line 70, ../sass/_base.scss */
+  .medio-sin-mar-izq {
+    margin-left: 0 !important;
+  }
+}
+@media only screen and (max-width: 568px) {
+  /* line 73, ../sass/_base.scss */
+  .chico-sin-mar-izq {
+    margin-left: 0 !important;
+  }
+}
+/* line 76, ../sass/_base.scss */
+.sin-mar-der {
+  margin-right: 0 !important;
+}
+
+/* line 77, ../sass/_base.scss */
+.sin-mar-btm {
+  margin-bottom: 0 !important;
+}
+
+/* line 79, ../sass/_base.scss */
+.sin-pad-btm {
+  padding-bottom: 0 !important;
+}
+
+/* line 87, ../sass/_base.scss */
+.mail {
+  z-index: 100000;
+  position: fixed;
+  bottom: 30px;
+  left: 40px;
+  height: 20px;
+  padding-right: 40px;
+  text-align: right;
+  font-size: 14px;
+  font-family: "Source", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 1px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 87, ../sass/_base.scss */
+  .mail {
+    display: none;
+  }
+}
+/* line 97, ../sass/_base.scss */
+.mail a {
+  color: black;
+  display: inline-block;
+  text-align: left;
+  font-size: 16px;
+  font-family: "Source", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+/* line 111, ../sass/_base.scss */
+.mail a:hover {
+  text-decoration: none;
+  color: black;
+}
+@media only screen and (max-width: 568px) {
+  /* line 111, ../sass/_base.scss */
+  .mail a:hover {
+    color: white;
+  }
+}
+/* line 119, ../sass/_base.scss */
+.mail a:visited {
+  text-decoration: none;
+  color: black;
+}
+@media only screen and (max-width: 568px) {
+  /* line 119, ../sass/_base.scss */
+  .mail a:visited {
+    color: white;
+  }
+}
+
+/**
+* LA RETÍCULA
+* -----------
+*/
+/* line 7, ../sass/_reticula.scss */
+.row, .cuadricula {
+  z-index: 2;
+  display: block;
+  overflow: hidden;
+  max-width: 1200px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding-left: 0px;
+  padding-right: 0px;
+  position: relative;
+}
+/* line 18, ../sass/_reticula.scss */
+.row .cuadricula, .row .row, .cuadricula .cuadricula, .cuadricula .row {
+  min-width: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* line 32, ../sass/_reticula.scss */
+.row {
+  width: 100%;
+}
+
+/* line 37, ../sass/_reticula.scss */
+.cuadricula {
+  width: 102.5%;
+}
+
+@media only screen and (min-width: 1500px) {
+  /* line 43, ../sass/_reticula.scss */
+  .cuadricula {
+    padding-right: 0px;
+  }
+}
+/* line 49, ../sass/_reticula.scss */
+.column, .columns, .cuadro {
+  display: block;
+  float: left;
+  position: relative;
+}
+
+/* line 58, ../sass/_reticula.scss */
+.cuadro {
+  overflow: visible !important;
+  margin-right: 2.5%;
+}
+
+/* line 62, ../sass/_reticula.scss */
+.column, .columns {
+  margin-left: 2.5%;
+}
+
+/* line 68, ../sass/_reticula.scss */
+.column:first-child, .columns:first-child {
+  margin-left: 0;
+}
+
+/* line 75, ../sass/_reticula.scss */
+.row .grande-1.columns {
+  width: 6.04167%;
+}
+/* line 75, ../sass/_reticula.scss */
+.row .grande-2.columns {
+  width: 14.58333%;
+}
+/* line 75, ../sass/_reticula.scss */
+.row .grande-3.columns {
+  width: 23.125%;
+}
+/* line 75, ../sass/_reticula.scss */
+.row .grande-4.columns {
+  width: 31.66667%;
+}
+/* line 75, ../sass/_reticula.scss */
+.row .grande-5.columns {
+  width: 40.20833%;
+}
+/* line 75, ../sass/_reticula.scss */
+.row .grande-6.columns {
+  width: 48.75%;
+}
+/* line 75, ../sass/_reticula.scss */
+.row .grande-7.columns {
+  width: 57.29167%;
+}
+/* line 75, ../sass/_reticula.scss */
+.row .grande-8.columns {
+  width: 65.83333%;
+}
+/* line 75, ../sass/_reticula.scss */
+.row .grande-9.columns {
+  width: 74.375%;
+}
+/* line 75, ../sass/_reticula.scss */
+.row .grande-10.columns {
+  width: 82.91667%;
+}
+/* line 75, ../sass/_reticula.scss */
+.row .grande-11.columns {
+  width: 91.45833%;
+}
+/* line 75, ../sass/_reticula.scss */
+.row .grande-12.columns {
+  width: 100%;
+}
+
+/* line 84, ../sass/_reticula.scss */
+.cuadricula .grande-1.cuadro {
+  width: 5.83333%;
+}
+/* line 84, ../sass/_reticula.scss */
+.cuadricula .grande-2.cuadro {
+  width: 14.16667%;
+}
+/* line 84, ../sass/_reticula.scss */
+.cuadricula .grande-3.cuadro {
+  width: 22.5%;
+}
+/* line 84, ../sass/_reticula.scss */
+.cuadricula .grande-4.cuadro {
+  width: 30.83333%;
+}
+/* line 84, ../sass/_reticula.scss */
+.cuadricula .grande-5.cuadro {
+  width: 39.16667%;
+}
+/* line 84, ../sass/_reticula.scss */
+.cuadricula .grande-6.cuadro {
+  width: 47.5%;
+}
+/* line 84, ../sass/_reticula.scss */
+.cuadricula .grande-7.cuadro {
+  width: 55.83333%;
+}
+/* line 84, ../sass/_reticula.scss */
+.cuadricula .grande-8.cuadro {
+  width: 64.16667%;
+}
+/* line 84, ../sass/_reticula.scss */
+.cuadricula .grande-9.cuadro {
+  width: 72.5%;
+}
+/* line 84, ../sass/_reticula.scss */
+.cuadricula .grande-10.cuadro {
+  width: 80.83333%;
+}
+/* line 84, ../sass/_reticula.scss */
+.cuadricula .grande-11.cuadro {
+  width: 89.16667%;
+}
+/* line 84, ../sass/_reticula.scss */
+.cuadricula .grande-12.cuadro {
+  width: 97.5%;
+}
+
+@media only screen and (max-width: 800px) {
+  /* line 117, ../sass/_reticula.scss */
+  .row .medio-1.columns {
+    width: 6.04167%;
+  }
+  /* line 117, ../sass/_reticula.scss */
+  .row .medio-2.columns {
+    width: 14.58333%;
+  }
+  /* line 117, ../sass/_reticula.scss */
+  .row .medio-3.columns {
+    width: 23.125%;
+  }
+  /* line 117, ../sass/_reticula.scss */
+  .row .medio-4.columns {
+    width: 31.66667%;
+  }
+  /* line 117, ../sass/_reticula.scss */
+  .row .medio-5.columns {
+    width: 40.20833%;
+  }
+  /* line 117, ../sass/_reticula.scss */
+  .row .medio-6.columns {
+    width: 48.75%;
+  }
+  /* line 117, ../sass/_reticula.scss */
+  .row .medio-7.columns {
+    width: 57.29167%;
+  }
+  /* line 117, ../sass/_reticula.scss */
+  .row .medio-8.columns {
+    width: 65.83333%;
+  }
+  /* line 117, ../sass/_reticula.scss */
+  .row .medio-9.columns {
+    width: 74.375%;
+  }
+  /* line 117, ../sass/_reticula.scss */
+  .row .medio-10.columns {
+    width: 82.91667%;
+  }
+  /* line 117, ../sass/_reticula.scss */
+  .row .medio-11.columns {
+    width: 91.45833%;
+  }
+  /* line 117, ../sass/_reticula.scss */
+  .row .medio-12.columns {
+    width: 100%;
+  }
+
+  /* line 124, ../sass/_reticula.scss */
+  .cuadricula .medio-1.cuadro {
+    width: 5.83333%;
+  }
+  /* line 124, ../sass/_reticula.scss */
+  .cuadricula .medio-2.cuadro {
+    width: 14.16667%;
+  }
+  /* line 124, ../sass/_reticula.scss */
+  .cuadricula .medio-3.cuadro {
+    width: 22.5%;
+  }
+  /* line 124, ../sass/_reticula.scss */
+  .cuadricula .medio-4.cuadro {
+    width: 30.83333%;
+  }
+  /* line 124, ../sass/_reticula.scss */
+  .cuadricula .medio-5.cuadro {
+    width: 39.16667%;
+  }
+  /* line 124, ../sass/_reticula.scss */
+  .cuadricula .medio-6.cuadro {
+    width: 47.5%;
+  }
+  /* line 124, ../sass/_reticula.scss */
+  .cuadricula .medio-7.cuadro {
+    width: 55.83333%;
+  }
+  /* line 124, ../sass/_reticula.scss */
+  .cuadricula .medio-8.cuadro {
+    width: 64.16667%;
+  }
+  /* line 124, ../sass/_reticula.scss */
+  .cuadricula .medio-9.cuadro {
+    width: 72.5%;
+  }
+  /* line 124, ../sass/_reticula.scss */
+  .cuadricula .medio-10.cuadro {
+    width: 80.83333%;
+  }
+  /* line 124, ../sass/_reticula.scss */
+  .cuadricula .medio-11.cuadro {
+    width: 89.16667%;
+  }
+  /* line 124, ../sass/_reticula.scss */
+  .cuadricula .medio-12.cuadro {
+    width: 97.5%;
+  }
+
+  /* line 130, ../sass/_reticula.scss */
+  .row .medio-12.columns {
+    margin-bottom: 60px;
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 568px) {
+  /* line 141, ../sass/_reticula.scss */
+  .row .chico-1.columns {
+    width: 6.04167%;
+  }
+  /* line 141, ../sass/_reticula.scss */
+  .row .chico-2.columns {
+    width: 14.58333%;
+  }
+  /* line 141, ../sass/_reticula.scss */
+  .row .chico-3.columns {
+    width: 23.125%;
+  }
+  /* line 141, ../sass/_reticula.scss */
+  .row .chico-4.columns {
+    width: 31.66667%;
+  }
+  /* line 141, ../sass/_reticula.scss */
+  .row .chico-5.columns {
+    width: 40.20833%;
+  }
+  /* line 141, ../sass/_reticula.scss */
+  .row .chico-6.columns {
+    width: 48.75%;
+  }
+  /* line 141, ../sass/_reticula.scss */
+  .row .chico-7.columns {
+    width: 57.29167%;
+  }
+  /* line 141, ../sass/_reticula.scss */
+  .row .chico-8.columns {
+    width: 65.83333%;
+  }
+  /* line 141, ../sass/_reticula.scss */
+  .row .chico-9.columns {
+    width: 74.375%;
+  }
+  /* line 141, ../sass/_reticula.scss */
+  .row .chico-10.columns {
+    width: 82.91667%;
+  }
+  /* line 141, ../sass/_reticula.scss */
+  .row .chico-11.columns {
+    width: 91.45833%;
+  }
+  /* line 141, ../sass/_reticula.scss */
+  .row .chico-12.columns {
+    width: 100%;
+  }
+
+  /* line 148, ../sass/_reticula.scss */
+  .cuadricula .chico-1.cuadro {
+    width: 5.83333%;
+  }
+  /* line 148, ../sass/_reticula.scss */
+  .cuadricula .chico-2.cuadro {
+    width: 14.16667%;
+  }
+  /* line 148, ../sass/_reticula.scss */
+  .cuadricula .chico-3.cuadro {
+    width: 22.5%;
+  }
+  /* line 148, ../sass/_reticula.scss */
+  .cuadricula .chico-4.cuadro {
+    width: 30.83333%;
+  }
+  /* line 148, ../sass/_reticula.scss */
+  .cuadricula .chico-5.cuadro {
+    width: 39.16667%;
+  }
+  /* line 148, ../sass/_reticula.scss */
+  .cuadricula .chico-6.cuadro {
+    width: 47.5%;
+  }
+  /* line 148, ../sass/_reticula.scss */
+  .cuadricula .chico-7.cuadro {
+    width: 55.83333%;
+  }
+  /* line 148, ../sass/_reticula.scss */
+  .cuadricula .chico-8.cuadro {
+    width: 64.16667%;
+  }
+  /* line 148, ../sass/_reticula.scss */
+  .cuadricula .chico-9.cuadro {
+    width: 72.5%;
+  }
+  /* line 148, ../sass/_reticula.scss */
+  .cuadricula .chico-10.cuadro {
+    width: 80.83333%;
+  }
+  /* line 148, ../sass/_reticula.scss */
+  .cuadricula .chico-11.cuadro {
+    width: 89.16667%;
+  }
+  /* line 148, ../sass/_reticula.scss */
+  .cuadricula .chico-12.cuadro {
+    width: 97.5%;
+  }
+
+  /* line 154, ../sass/_reticula.scss */
+  .row .chico-12.columns {
+    margin-bottom: 60px;
+    margin-left: 0;
+  }
+}
+/* line 165, ../sass/_reticula.scss */
+.row .grande-1.centered {
+  margin-left: 46.97917%;
+}
+/* line 165, ../sass/_reticula.scss */
+.row .grande-2.centered {
+  margin-left: 42.70833%;
+}
+/* line 165, ../sass/_reticula.scss */
+.row .grande-3.centered {
+  margin-left: 38.4375%;
+}
+/* line 165, ../sass/_reticula.scss */
+.row .grande-4.centered {
+  margin-left: 34.16667%;
+}
+/* line 165, ../sass/_reticula.scss */
+.row .grande-5.centered {
+  margin-left: 29.89583%;
+}
+/* line 165, ../sass/_reticula.scss */
+.row .grande-6.centered {
+  margin-left: 25.625%;
+}
+/* line 165, ../sass/_reticula.scss */
+.row .grande-7.centered {
+  margin-left: 21.35417%;
+}
+/* line 165, ../sass/_reticula.scss */
+.row .grande-8.centered {
+  margin-left: 17.08333%;
+}
+/* line 165, ../sass/_reticula.scss */
+.row .grande-9.centered {
+  margin-left: 12.8125%;
+}
+/* line 165, ../sass/_reticula.scss */
+.row .grande-10.centered {
+  margin-left: 8.54167%;
+}
+/* line 165, ../sass/_reticula.scss */
+.row .grande-11.centered {
+  margin-left: 4.27083%;
+}
+
+@media only screen and (max-width: 800px) {
+  /* line 185, ../sass/_reticula.scss */
+  .row .medio-1.centered {
+    margin-left: 46.97917%;
+  }
+  /* line 185, ../sass/_reticula.scss */
+  .row .medio-2.centered {
+    margin-left: 42.70833%;
+  }
+  /* line 185, ../sass/_reticula.scss */
+  .row .medio-3.centered {
+    margin-left: 38.4375%;
+  }
+  /* line 185, ../sass/_reticula.scss */
+  .row .medio-4.centered {
+    margin-left: 34.16667%;
+  }
+  /* line 185, ../sass/_reticula.scss */
+  .row .medio-5.centered {
+    margin-left: 29.89583%;
+  }
+  /* line 185, ../sass/_reticula.scss */
+  .row .medio-6.centered {
+    margin-left: 25.625%;
+  }
+  /* line 185, ../sass/_reticula.scss */
+  .row .medio-7.centered {
+    margin-left: 21.35417%;
+  }
+  /* line 185, ../sass/_reticula.scss */
+  .row .medio-8.centered {
+    margin-left: 17.08333%;
+  }
+  /* line 185, ../sass/_reticula.scss */
+  .row .medio-9.centered {
+    margin-left: 12.8125%;
+  }
+  /* line 185, ../sass/_reticula.scss */
+  .row .medio-10.centered {
+    margin-left: 8.54167%;
+  }
+  /* line 185, ../sass/_reticula.scss */
+  .row .medio-11.centered {
+    margin-left: 4.27083%;
+  }
+  /* line 189, ../sass/_reticula.scss */
+  .row .medio-12.centered {
+    margin-left: 0 !important;
+  }
+}
+@media only screen and (max-width: 568px) {
+  /* line 196, ../sass/_reticula.scss */
+  .row .chico-1.centered {
+    margin-left: 46.97917%;
+  }
+  /* line 196, ../sass/_reticula.scss */
+  .row .chico-2.centered {
+    margin-left: 42.70833%;
+  }
+  /* line 196, ../sass/_reticula.scss */
+  .row .chico-3.centered {
+    margin-left: 38.4375%;
+  }
+  /* line 196, ../sass/_reticula.scss */
+  .row .chico-4.centered {
+    margin-left: 34.16667%;
+  }
+  /* line 196, ../sass/_reticula.scss */
+  .row .chico-5.centered {
+    margin-left: 29.89583%;
+  }
+  /* line 196, ../sass/_reticula.scss */
+  .row .chico-6.centered {
+    margin-left: 25.625%;
+  }
+  /* line 196, ../sass/_reticula.scss */
+  .row .chico-7.centered {
+    margin-left: 21.35417%;
+  }
+  /* line 196, ../sass/_reticula.scss */
+  .row .chico-8.centered {
+    margin-left: 17.08333%;
+  }
+  /* line 196, ../sass/_reticula.scss */
+  .row .chico-9.centered {
+    margin-left: 12.8125%;
+  }
+  /* line 196, ../sass/_reticula.scss */
+  .row .chico-10.centered {
+    margin-left: 8.54167%;
+  }
+  /* line 196, ../sass/_reticula.scss */
+  .row .chico-11.centered {
+    margin-left: 4.27083%;
+  }
+  /* line 200, ../sass/_reticula.scss */
+  .row .chico-12.centered {
+    margin-left: 0 !important;
+  }
+}
+/* line 207, ../sass/_reticula.scss */
+.row .empuja-grande-1 {
+  margin-left: 11.04167%;
+}
+/* line 209, ../sass/_reticula.scss */
+.row .empuja-grande-1:first-child {
+  margin-left: 8.54167%;
+}
+/* line 207, ../sass/_reticula.scss */
+.row .empuja-grande-2 {
+  margin-left: 19.58333%;
+}
+/* line 209, ../sass/_reticula.scss */
+.row .empuja-grande-2:first-child {
+  margin-left: 17.08333%;
+}
+/* line 207, ../sass/_reticula.scss */
+.row .empuja-grande-3 {
+  margin-left: 28.125%;
+}
+/* line 209, ../sass/_reticula.scss */
+.row .empuja-grande-3:first-child {
+  margin-left: 25.625%;
+}
+/* line 207, ../sass/_reticula.scss */
+.row .empuja-grande-4 {
+  margin-left: 36.66667%;
+}
+/* line 209, ../sass/_reticula.scss */
+.row .empuja-grande-4:first-child {
+  margin-left: 34.16667%;
+}
+/* line 207, ../sass/_reticula.scss */
+.row .empuja-grande-5 {
+  margin-left: 45.20833%;
+}
+/* line 209, ../sass/_reticula.scss */
+.row .empuja-grande-5:first-child {
+  margin-left: 42.70833%;
+}
+/* line 207, ../sass/_reticula.scss */
+.row .empuja-grande-6 {
+  margin-left: 53.75%;
+}
+/* line 209, ../sass/_reticula.scss */
+.row .empuja-grande-6:first-child {
+  margin-left: 51.25%;
+}
+/* line 207, ../sass/_reticula.scss */
+.row .empuja-grande-7 {
+  margin-left: 62.29167%;
+}
+/* line 209, ../sass/_reticula.scss */
+.row .empuja-grande-7:first-child {
+  margin-left: 59.79167%;
+}
+/* line 207, ../sass/_reticula.scss */
+.row .empuja-grande-8 {
+  margin-left: 70.83333%;
+}
+/* line 209, ../sass/_reticula.scss */
+.row .empuja-grande-8:first-child {
+  margin-left: 68.33333%;
+}
+/* line 207, ../sass/_reticula.scss */
+.row .empuja-grande-9 {
+  margin-left: 79.375%;
+}
+/* line 209, ../sass/_reticula.scss */
+.row .empuja-grande-9:first-child {
+  margin-left: 76.875%;
+}
+/* line 207, ../sass/_reticula.scss */
+.row .empuja-grande-10 {
+  margin-left: 87.91667%;
+}
+/* line 209, ../sass/_reticula.scss */
+.row .empuja-grande-10:first-child {
+  margin-left: 85.41667%;
+}
+/* line 207, ../sass/_reticula.scss */
+.row .empuja-grande-11 {
+  margin-left: 96.45833%;
+}
+/* line 209, ../sass/_reticula.scss */
+.row .empuja-grande-11:first-child {
+  margin-left: 93.95833%;
+}
+
+@media only screen and (max-width: 800px) {
+  /* line 233, ../sass/_reticula.scss */
+  .row .empuja-medio-1 {
+    margin-left: 11.04167%;
+  }
+  /* line 235, ../sass/_reticula.scss */
+  .row .empuja-medio-1:first-child {
+    margin-left: 8.54167%;
+  }
+  /* line 233, ../sass/_reticula.scss */
+  .row .empuja-medio-2 {
+    margin-left: 19.58333%;
+  }
+  /* line 235, ../sass/_reticula.scss */
+  .row .empuja-medio-2:first-child {
+    margin-left: 17.08333%;
+  }
+  /* line 233, ../sass/_reticula.scss */
+  .row .empuja-medio-3 {
+    margin-left: 28.125%;
+  }
+  /* line 235, ../sass/_reticula.scss */
+  .row .empuja-medio-3:first-child {
+    margin-left: 25.625%;
+  }
+  /* line 233, ../sass/_reticula.scss */
+  .row .empuja-medio-4 {
+    margin-left: 36.66667%;
+  }
+  /* line 235, ../sass/_reticula.scss */
+  .row .empuja-medio-4:first-child {
+    margin-left: 34.16667%;
+  }
+  /* line 233, ../sass/_reticula.scss */
+  .row .empuja-medio-5 {
+    margin-left: 45.20833%;
+  }
+  /* line 235, ../sass/_reticula.scss */
+  .row .empuja-medio-5:first-child {
+    margin-left: 42.70833%;
+  }
+  /* line 233, ../sass/_reticula.scss */
+  .row .empuja-medio-6 {
+    margin-left: 53.75%;
+  }
+  /* line 235, ../sass/_reticula.scss */
+  .row .empuja-medio-6:first-child {
+    margin-left: 51.25%;
+  }
+  /* line 233, ../sass/_reticula.scss */
+  .row .empuja-medio-7 {
+    margin-left: 62.29167%;
+  }
+  /* line 235, ../sass/_reticula.scss */
+  .row .empuja-medio-7:first-child {
+    margin-left: 59.79167%;
+  }
+  /* line 233, ../sass/_reticula.scss */
+  .row .empuja-medio-8 {
+    margin-left: 70.83333%;
+  }
+  /* line 235, ../sass/_reticula.scss */
+  .row .empuja-medio-8:first-child {
+    margin-left: 68.33333%;
+  }
+  /* line 233, ../sass/_reticula.scss */
+  .row .empuja-medio-9 {
+    margin-left: 79.375%;
+  }
+  /* line 235, ../sass/_reticula.scss */
+  .row .empuja-medio-9:first-child {
+    margin-left: 76.875%;
+  }
+  /* line 233, ../sass/_reticula.scss */
+  .row .empuja-medio-10 {
+    margin-left: 87.91667%;
+  }
+  /* line 235, ../sass/_reticula.scss */
+  .row .empuja-medio-10:first-child {
+    margin-left: 85.41667%;
+  }
+  /* line 233, ../sass/_reticula.scss */
+  .row .empuja-medio-11 {
+    margin-left: 96.45833%;
+  }
+  /* line 235, ../sass/_reticula.scss */
+  .row .empuja-medio-11:first-child {
+    margin-left: 93.95833%;
+  }
+  /* line 240, ../sass/_reticula.scss */
+  .row .empuja-medio-0 {
+    margin-left: 0 !important;
+  }
+}
+@media only screen and (max-width: 568px) {
+  /* line 247, ../sass/_reticula.scss */
+  .row .empuja-chico-1 {
+    margin-left: 11.04167%;
+  }
+  /* line 249, ../sass/_reticula.scss */
+  .row .empuja-chico-1:first-child {
+    margin-left: 8.54167%;
+  }
+  /* line 247, ../sass/_reticula.scss */
+  .row .empuja-chico-2 {
+    margin-left: 19.58333%;
+  }
+  /* line 249, ../sass/_reticula.scss */
+  .row .empuja-chico-2:first-child {
+    margin-left: 17.08333%;
+  }
+  /* line 247, ../sass/_reticula.scss */
+  .row .empuja-chico-3 {
+    margin-left: 28.125%;
+  }
+  /* line 249, ../sass/_reticula.scss */
+  .row .empuja-chico-3:first-child {
+    margin-left: 25.625%;
+  }
+  /* line 247, ../sass/_reticula.scss */
+  .row .empuja-chico-4 {
+    margin-left: 36.66667%;
+  }
+  /* line 249, ../sass/_reticula.scss */
+  .row .empuja-chico-4:first-child {
+    margin-left: 34.16667%;
+  }
+  /* line 247, ../sass/_reticula.scss */
+  .row .empuja-chico-5 {
+    margin-left: 45.20833%;
+  }
+  /* line 249, ../sass/_reticula.scss */
+  .row .empuja-chico-5:first-child {
+    margin-left: 42.70833%;
+  }
+  /* line 247, ../sass/_reticula.scss */
+  .row .empuja-chico-6 {
+    margin-left: 53.75%;
+  }
+  /* line 249, ../sass/_reticula.scss */
+  .row .empuja-chico-6:first-child {
+    margin-left: 51.25%;
+  }
+  /* line 247, ../sass/_reticula.scss */
+  .row .empuja-chico-7 {
+    margin-left: 62.29167%;
+  }
+  /* line 249, ../sass/_reticula.scss */
+  .row .empuja-chico-7:first-child {
+    margin-left: 59.79167%;
+  }
+  /* line 247, ../sass/_reticula.scss */
+  .row .empuja-chico-8 {
+    margin-left: 70.83333%;
+  }
+  /* line 249, ../sass/_reticula.scss */
+  .row .empuja-chico-8:first-child {
+    margin-left: 68.33333%;
+  }
+  /* line 247, ../sass/_reticula.scss */
+  .row .empuja-chico-9 {
+    margin-left: 79.375%;
+  }
+  /* line 249, ../sass/_reticula.scss */
+  .row .empuja-chico-9:first-child {
+    margin-left: 76.875%;
+  }
+  /* line 247, ../sass/_reticula.scss */
+  .row .empuja-chico-10 {
+    margin-left: 87.91667%;
+  }
+  /* line 249, ../sass/_reticula.scss */
+  .row .empuja-chico-10:first-child {
+    margin-left: 85.41667%;
+  }
+  /* line 247, ../sass/_reticula.scss */
+  .row .empuja-chico-11 {
+    margin-left: 96.45833%;
+  }
+  /* line 249, ../sass/_reticula.scss */
+  .row .empuja-chico-11:first-child {
+    margin-left: 93.95833%;
+  }
+  /* line 254, ../sass/_reticula.scss */
+  .row .empuja-chico-0 {
+    margin-left: 0 !important;
+  }
+}
+@media only screen and (max-width: 800px) {
+  /* line 201, ../sass/_mixins.scss */
+  .ret-5.ret-medio .ret-col.columns {
+    width: 18%;
+  }
+}
+/**
+* FUENTES
+* -------
+*/
+@font-face {
+  font-family: "PTSerif";
+  src: url("../fonts/ptm75f-webfont.eot");
+  src: url("../fonts/ptm75f-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/ptm75f-webfont.woff") format("woff"), url("../fonts/ptm75f-webfont.ttf") format("truetype"), url("../fonts/ptm75f-webfont.svg#../fonts/ptm75f-webfont") format("svg");
+  font-weight: serif;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Source";
+  src: url("../fonts/SourceSansPro-Bold.eot");
+  src: url("../fonts/SourceSansPro-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/SourceSansPro-Bold.woff") format("woff"), url("../fonts/SourceSansPro-Bold.ttf") format("truetype"), url("../fonts/SourceSansPro-Bold.svg#../fonts/SourceSansPro-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Source";
+  src: url("../fonts/SourceSansPro-Regular.eot");
+  src: url("../fonts/SourceSansPro-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/SourceSansPro-Regular.woff") format("woff"), url("../fonts/SourceSansPro-Regular.ttf") format("truetype"), url("../fonts/SourceSansPro-Regular.svg#../fonts/SourceSansPro-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+/**
+* TIPOGRAFÍA
+* ----------
+*/
+/* line 44, ../sass/ultraligero.scss */
+.tam-prin {
+  font-size: 210px;
+  line-height: 240px;
+  margin-bottom: 240px;
+}
+
+/* line 45, ../sass/ultraligero.scss */
+.tam-sec {
+  font-size: 150px;
+  line-height: 180px;
+}
+
+/* line 47, ../sass/ultraligero.scss */
+.tam-ter {
+  font-size: 90px;
+  line-height: 150px;
+}
+/* line 49, ../sass/ultraligero.scss */
+.tam-ter p, .tam-ter ul, .tam-ter ol {
+  font-size: 90px;
+  line-height: 150px;
+  margin-bottom: 150px;
+}
+
+/* line 53, ../sass/ultraligero.scss */
+.tam-cuat p {
+  font-size: 60px;
+  line-height: 150px;
+  margin-bottom: 60px;
+}
+
+/* line 57, ../sass/ultraligero.scss */
+.tam-min p, .tam-min ul, .tam-min ol {
+  font-size: 30px;
+  line-height: 60px;
+  margin-bottom: 60px;
+}
+
+/**
+* SECCIONES
+* -----------
+*/
+/* line 70, ../sass/ultraligero.scss */
+.seccion {
+  padding-top: 330px;
+  padding-bottom: 270px;
+}
+
+/* line 74, ../sass/ultraligero.scss */
+.contacto-header {
+  z-index: 120;
+  position: fixed;
+  width: 100%;
+}
+/* line 78, ../sass/ultraligero.scss */
+.contacto-header .contacto-botones {
+  padding-right: 20px;
+  right: 0px;
+  top: 20px;
+  height: 21px;
+  z-index: 100;
+}
+/* line 84, ../sass/ultraligero.scss */
+.contacto-header .contacto-botones a {
+  float: right;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #993399;
+  letter-spacing: .2px;
+  text-decoration: none;
+}
+/* line 92, ../sass/ultraligero.scss */
+.contacto-header .contacto-botones a span {
+  margin-bottom: 4px;
+}
+/* line 97, ../sass/ultraligero.scss */
+.contacto-header .contacto-botones .icono-contacto {
+  margin-left: 24px;
+  margin-right: 4px;
+  width: 21px;
+  height: 21px;
+}
+
+/* line 108, ../sass/ultraligero.scss */
+.desaparece-linea-header {
+  top: -30px !important;
+}
+
+/* line 111, ../sass/ultraligero.scss */
+.mover-header {
+  top: -50px !important;
+}
+
+/* line 114, ../sass/ultraligero.scss */
+.contenedor-submenu {
+  overflow: visible;
+  display: none;
+  z-index: 120;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+}
+/* line 116, ../sass/ultraligero.scss */
+.contenedor-submenu .levanta-row, .contenedor-submenu .row-submenu {
+  overflow: visible;
+}
+/* line 121, ../sass/ultraligero.scss */
+.contenedor-submenu .redes-submenu a {
+  padding-top: 4px;
+  width: 50%;
+  position: relative;
+  float: right;
+  bottom: 0px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 40px;
+  color: white;
+  text-decoration: none;
+}
+/* line 134, ../sass/ultraligero.scss */
+.contenedor-submenu .redes-submenu img {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  top: 3px;
+  margin-right: 4px;
+}
+/* line 143, ../sass/ultraligero.scss */
+.contenedor-submenu .obituario-whatsapp {
+  background-color: #4AAE20;
+}
+/* line 146, ../sass/ultraligero.scss */
+.contenedor-submenu .obituario-facebook {
+  background-color: #00ABE9;
+}
+@media only screen and (max-width: 568px) {
+  /* line 114, ../sass/ultraligero.scss */
+  .contenedor-submenu {
+    display: block;
+  }
+}
+/* line 157, ../sass/ultraligero.scss */
+.contenedor-submenu .iconos-generales {
+  width: 21px;
+  height: 21px;
+}
+/* line 161, ../sass/ultraligero.scss */
+.contenedor-submenu .submenu-whatsapp {
+  text-align: right;
+  padding-right: 20px;
+}
+/* line 165, ../sass/ultraligero.scss */
+.contenedor-submenu .submenu-resultados {
+  text-align: center;
+}
+/* line 168, ../sass/ultraligero.scss */
+.contenedor-submenu .submenu-telefono {
+  text-align: left;
+  padding-left: 20px;
+}
+/* line 172, ../sass/ultraligero.scss */
+.contenedor-submenu .menu-submenu {
+  background-color: #993399;
+  padding-top: 10px;
+  padding-bottom: 12px;
+  border-top: 1.5px solid white;
+}
+/* line 179, ../sass/ultraligero.scss */
+.contenedor-submenu .submenu-obituario {
+  background-color: #ffccff;
+  padding-top: 10px;
+  text-align: center;
+  overflow: visible;
+  border-top: 1.5px solid white;
+}
+/* line 187, ../sass/ultraligero.scss */
+.contenedor-submenu .submenu-telefono a, .contenedor-submenu .submenu-resultados a, .contenedor-submenu .submenu-whatsapp a {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px !important;
+  color: white;
+  text-decoration: none;
+  letter-spacing: .2px;
+}
+/* line 194, ../sass/ultraligero.scss */
+.contenedor-submenu .submenu-telefono a span, .contenedor-submenu .submenu-resultados a span, .contenedor-submenu .submenu-whatsapp a span {
+  margin-bottom: 4px;
+}
+/* line 200, ../sass/ultraligero.scss */
+.contenedor-submenu .levanta-row {
+  margin-top: -40px;
+  padding-bottom: 20px;
+}
+/* line 203, ../sass/ultraligero.scss */
+.contenedor-submenu .levanta-row .divisiones-submenu {
+  width: 50%;
+  position: relative;
+  float: left;
+  bottom: 0px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 40px;
+  color: white;
+  text-decoration: none;
+}
+/* line 215, ../sass/ultraligero.scss */
+.contenedor-submenu .funcion-texto {
+  padding-bottom: 8px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+  line-height: 24px;
+  color: #993399;
+  letter-spacing: .2px;
+  text-decoration: none;
+}
+/* line 224, ../sass/ultraligero.scss */
+.contenedor-submenu .dar-flor, .contenedor-submenu .encender-vela {
+  background-color: #993399;
+  width: 58px;
+  height: 58px;
+  text-align: center;
+  display: inline-block;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  cursor: pointer;
+  padding-top: -27px;
+}
+/* line 235, ../sass/ultraligero.scss */
+.contenedor-submenu .dar-flor .icono-footer, .contenedor-submenu .encender-vela .icono-footer {
+  width: 36px;
+  margin-top: 10px !important;
+  height: 36px;
+  margin: 0px;
+}
+
+/* line 244, ../sass/ultraligero.scss */
+.header {
+  z-index: 110;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s  ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+}
+@media only screen and (max-width: 568px) {
+  /* line 244, ../sass/ultraligero.scss */
+  .header {
+    top: -30px;
+  }
+}
+/* line 256, ../sass/ultraligero.scss */
+.header .contenedor-header {
+  padding-top: 20px;
+  background-color: white;
+}
+/* line 262, ../sass/ultraligero.scss */
+.header .contacto-logo-animacion {
+  padding-top: 15px;
+}
+/* line 265, ../sass/ultraligero.scss */
+.header .contacto-logo {
+  background-color: white;
+  padding-top: 50px;
+}
+/* line 270, ../sass/ultraligero.scss */
+.header .contacto-logo div {
+  display: inline-block;
+}
+/* line 274, ../sass/ultraligero.scss */
+.header .contacto-logo a {
+  posoition: relative;
+  text-decoration: none;
+  display: inline-block;
+}
+/* line 282, ../sass/ultraligero.scss */
+.header .contacto-logo .logo-valparaiso {
+  display: inline-block;
+  margin-left: 20px;
+  width: 177px;
+  height: auto;
+  transition: width 0.4s ease-in-out;
+  -webkit-transition: width 0.4s ease-in-out;
+  -moz-transition: width 0.4s  ease-in-out;
+  -ms-transition: width 0.4s ease-in-out;
+}
+/* line 293, ../sass/ultraligero.scss */
+.header .contacto-logo .texto-valparaiso {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  /* For IE8 and earlier */
+  display: inline-block;
+  margin-left: 15px;
+  width: 134px;
+  height: auto;
+  padding-bottom: 8px;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s  ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+}
+/* line 306, ../sass/ultraligero.scss */
+.header .contacto-logo .shrink {
+  width: 144px !important;
+}
+/* line 310, ../sass/ultraligero.scss */
+.header .contacto-logo .desaparece {
+  width: 116px !important;
+  opacity: 0;
+  filter: alpha(opacity=100);
+  /* For IE8 and earlier */
+}
+/* line 319, ../sass/ultraligero.scss */
+.header .menu-header {
+  background-color: white;
+  padding-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 12px;
+}
+/* line 326, ../sass/ultraligero.scss */
+.header .menu-header a {
+  margin-right: 25px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #993399;
+  text-decoration: none;
+  letter-spacing: .2px;
+}
+/* line 335, ../sass/ultraligero.scss */
+.header .menu-header a span {
+  margin-bottom: 4px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 341, ../sass/ultraligero.scss */
+  .header .menu-header .contacto-chico {
+    position: absolute;
+    right: 0px;
+    bottom: 13px;
+  }
+}
+@media only screen and (max-width: 568px) {
+  /* line 348, ../sass/ultraligero.scss */
+  .header .menu-header .nosotros-chico {
+    position: absolute;
+    -ms-transform: translateX(-50%);
+    /* IE 9 */
+    -webkit-transform: translateX(-50%);
+    /* Safari */
+    -moz-transform: translateX(-50%);
+    /* Safari */
+    transform: translateX(-50%);
+    bottom: 13px;
+    left: 50%;
+  }
+}
+/* line 359, ../sass/ultraligero.scss */
+.header .menu-header .plan-eliseo {
+  margin-top: 10px;
+  float: right;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px !important;
+  color: #993399;
+  letter-spacing: .2px;
+  text-decoration: none;
+  margin-right: 0px !important;
+}
+/* line 368, ../sass/ultraligero.scss */
+.header .menu-header .plan-eliseo span {
+  margin-bottom: 4px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 359, ../sass/ultraligero.scss */
+  .header .menu-header .plan-eliseo {
+    display: none;
+  }
+}
+/* line 379, ../sass/ultraligero.scss */
+.header .menu-header .icono-contacto {
+  margin-top: 10px;
+  margin-left: 24px;
+  margin-right: 4px;
+  width: 21px;
+  height: 21px;
+  float: right;
+}
+
+/* line 392, ../sass/ultraligero.scss */
+.cuerpo {
+  padding-top: 150px;
+  background-color: white;
+}
+
+/* line 402, ../sass/ultraligero.scss */
+.obituario .aparece-formulario {
+  display: none;
+}
+/* line 405, ../sass/ultraligero.scss */
+.obituario form {
+  width: 100%;
+}
+/* line 408, ../sass/ultraligero.scss */
+.obituario form textfield, .obituario form input {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: #993399;
+  letter-spacing: .2px;
+  text-align: center;
+  font-family: "Source", sans-serif;
+  border: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  background-color: transparent;
+  height: 34px;
+  width: 100%;
+  padding-left: 0px;
+  margin-bottom: 0px;
+}
+/* line 434, ../sass/ultraligero.scss */
+.obituario form input[type=submit] {
+  letter-spacing: .1px;
+  margin-top: 14px;
+  font-family: "Source", sans-serif;
+  border: 0px !important;
+  font-size: 20px;
+  width: 100%;
+  line-height: 25px;
+  border-radius: 0;
+  -webkit-appearance: none;
+  background-color: transparent;
+  height: 30px;
+  margin-bottom: 0px !important;
+  text-decoration: none;
+  text-align: right;
+  font-weight: 500;
+}
+/* line 451, ../sass/ultraligero.scss */
+.obituario form ::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  opacity: 1 !important;
+}
+/* line 454, ../sass/ultraligero.scss */
+.obituario form ::-moz-placeholder {
+  /* Firefox 19+ */
+  opacity: 1 !important;
+}
+/* line 457, ../sass/ultraligero.scss */
+.obituario form :-ms-input-placeholder {
+  /* IE 10+ */
+  opacity: 1 !important;
+}
+/* line 460, ../sass/ultraligero.scss */
+.obituario form :-moz-placeholder {
+  /* Firefox 18- */
+  opacity: 1 !important;
+}
+/* line 463, ../sass/ultraligero.scss */
+.obituario form input::placeholder {
+  opacity: 1 !important;
+}
+/* line 468, ../sass/ultraligero.scss */
+.obituario .obiturio-color {
+  background-color: #f4f1ec;
+  padding: 20px;
+}
+/* line 473, ../sass/ultraligero.scss */
+.obituario .avatar-obituario {
+  padding: 20px;
+}
+/* line 475, ../sass/ultraligero.scss */
+.obituario .avatar-obituario h3 {
+  width: 100%;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 26px;
+  color: #330033;
+  letter-spacing: .2px;
+  text-decoration: none;
+  text-align: center;
+  font-color: #330033;
+}
+/* line 485, ../sass/ultraligero.scss */
+.obituario .avatar-obituario h3 span {
+  display: block;
+  font-weight: normal;
+  font-style: italic;
+}
+/* line 491, ../sass/ultraligero.scss */
+.obituario .avatar-obituario .avatar-imagen {
+  text-align: center;
+}
+/* line 494, ../sass/ultraligero.scss */
+.obituario .avatar-obituario .avatar-imagen img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+@media only screen and (max-width: 568px) {
+  /* line 494, ../sass/ultraligero.scss */
+  .obituario .avatar-obituario .avatar-imagen img {
+    width: 200px;
+    height: 200px;
+  }
+}
+/* line 506, ../sass/ultraligero.scss */
+.obituario .avatar-obituario .cuadro-avatar {
+  border-radius: 50%;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  margin-bottom: 20px;
+  overflow: visible;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* line 518, ../sass/ultraligero.scss */
+.obituario .avatar-obituario a {
+  text-decoration: none;
+}
+
+/* line 523, ../sass/ultraligero.scss */
+.obituario-single {
+  margin-top: -140px;
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow: display;
+}
+/* line 529, ../sass/ultraligero.scss */
+.obituario-single .obiturio-color {
+  background-color: #f4f1ec;
+  padding: 20px;
+  border-radius: 40px 40px 0px 0px;
+  margin-bottom: 40px;
+}
+/* line 534, ../sass/ultraligero.scss */
+.obituario-single .informacion-finado {
+  margin-top: 80px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 534, ../sass/ultraligero.scss */
+  .obituario-single .informacion-finado {
+    margin-top: 150px;
+  }
+}
+/* line 539, ../sass/ultraligero.scss */
+.obituario-single .informacion-finado .icono-obituario {
+  width: 20px;
+  height: 24px;
+  padding-top: 10px;
+  margin-right: 10px;
+}
+/* line 545, ../sass/ultraligero.scss */
+.obituario-single .informacion-finado .icono-ver {
+  width: 40px;
+  height: 28px;
+  padding-top: 4px;
+  margin-right: 10px;
+}
+/* line 551, ../sass/ultraligero.scss */
+.obituario-single .informacion-finado .titulos {
+  margin-bottom: 40px;
+}
+/* line 555, ../sass/ultraligero.scss */
+.obituario-single .galeria-miniatura {
+  padding-bottom: 40px;
+}
+/* line 557, ../sass/ultraligero.scss */
+.obituario-single .galeria-miniatura .cuadro-galeria {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  margin-bottom: 20px;
+  overflow: visible;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* line 569, ../sass/ultraligero.scss */
+.obituario-single h1 {
+  width: 100%;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 34px !important;
+  color: #330033;
+  letter-spacing: .2px;
+  text-decoration: none;
+  text-align: center;
+  font-color: #330033;
+  padding-bottom: 0px !important;
+  margin-bottom: 8px !important;
+}
+/* line 583, ../sass/ultraligero.scss */
+.obituario-single h2 {
+  width: 100%;
+  font-weight: normal;
+  font-size: 16px;
+  color: #993399;
+  line-height: 22px !important;
+  letter-spacing: .2px;
+  text-decoration: none;
+  text-align: center;
+  font-color: #330033;
+  padding-bottom: 0px !important;
+  margin-bottom: 0px !important;
+}
+/* line 596, ../sass/ultraligero.scss */
+.obituario-single h3 {
+  border-top: 2px solid #993399;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  width: 100%;
+  font-weight: regular;
+  font-size: 18px;
+  line-height: 26px !important;
+  color: #993399;
+  letter-spacing: .2px;
+  text-decoration: none;
+  text-align: left-texto;
+}
+/* line 610, ../sass/ultraligero.scss */
+.obituario-single h4 {
+  padding-bottom: 0px !important;
+  margin-bottom: 8px !important;
+  width: 100%;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 26px !important;
+  color: #330033;
+  letter-spacing: .2px;
+  text-decoration: none;
+  text-align: center;
+  font-color: #330033;
+  display: block;
+  font-weight: normal;
+  font-style: italic;
+}
+/* line 627, ../sass/ultraligero.scss */
+.obituario-single h5 {
+  padding-bottom: 30px;
+  width: 100%;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 26px;
+  color: #330033;
+  letter-spacing: .2px;
+  text-decoration: none;
+  text-align: center;
+  font-color: #330033;
+  display: block;
+  font-weight: bold;
+}
+/* line 641, ../sass/ultraligero.scss */
+.obituario-single p {
+  padding-bottom: 30px;
+  width: 100%;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 26px;
+  color: #330033;
+  letter-spacing: .2px;
+  text-decoration: none;
+  text-align: center;
+  font-color: #330033;
+  display: block;
+  font-weight: normal;
+}
+/* line 656, ../sass/ultraligero.scss */
+.obituario-single span {
+  padding-bottom: 10px;
+  width: 100%;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 26px;
+  color: #330033;
+  letter-spacing: .2px;
+  text-decoration: none;
+  text-align: center;
+  font-color: #330033;
+  display: block;
+  font-weight: normal;
+}
+/* line 669, ../sass/ultraligero.scss */
+.obituario-single a {
+  text-decoration: none;
+}
+
+/* line 674, ../sass/ultraligero.scss */
+.obituario-funciones {
+  z-index: 20;
+  Padding-top: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow: display;
+  text-align: center;
+}
+@media only screen and (max-width: 568px) {
+  /* line 674, ../sass/ultraligero.scss */
+  .obituario-funciones {
+    Padding-top: 60px;
+  }
+}
+/* line 685, ../sass/ultraligero.scss */
+.obituario-funciones .informacion-homenaje {
+  margin-bottom: 40px;
+  margin-top: 60px;
+}
+/* line 688, ../sass/ultraligero.scss */
+.obituario-funciones .informacion-homenaje img {
+  width: 100% !important;
+}
+/* line 693, ../sass/ultraligero.scss */
+.obituario-funciones .contenedor-funcion {
+  margin-top: 65px;
+}
+/* line 695, ../sass/ultraligero.scss */
+.obituario-funciones .contenedor-funcion .funcion-texto {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+  color: #993399;
+  letter-spacing: .2px;
+  text-decoration: none;
+}
+/* line 703, ../sass/ultraligero.scss */
+.obituario-funciones .contenedor-funcion .dar-flor, .obituario-funciones .contenedor-funcion .encender-vela {
+  background-color: #993399;
+  width: 90px;
+  height: 90px;
+  display: inline-block;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+@media only screen and (max-width: 568px) {
+  /* line 703, ../sass/ultraligero.scss */
+  .obituario-funciones .contenedor-funcion .dar-flor, .obituario-funciones .contenedor-funcion .encender-vela {
+    width: 58px;
+    height: 58px;
+  }
+}
+/* line 716, ../sass/ultraligero.scss */
+.obituario-funciones .contenedor-funcion .dar-flor .icono-footer, .obituario-funciones .contenedor-funcion .encender-vela .icono-footer {
+  margin: 20px;
+  width: 50px;
+  height: 50px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 716, ../sass/ultraligero.scss */
+  .obituario-funciones .contenedor-funcion .dar-flor .icono-footer, .obituario-funciones .contenedor-funcion .encender-vela .icono-footer {
+    width: 36px;
+    margin-top: 10px !important;
+    height: 36px;
+    margin: 0px;
+  }
+}
+/* line 731, ../sass/ultraligero.scss */
+.obituario-funciones .recursos-single {
+  padding-top: 80px;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+/* line 740, ../sass/ultraligero.scss */
+.obituario-funciones .avatar-imagen {
+  text-align: center;
+}
+/* line 743, ../sass/ultraligero.scss */
+.obituario-funciones .avatar-imagen img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+@media only screen and (max-width: 568px) {
+  /* line 743, ../sass/ultraligero.scss */
+  .obituario-funciones .avatar-imagen img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* line 758, ../sass/ultraligero.scss */
+.nosotros-page {
+  margin-top: -100px;
+  padding-bottom: 0px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 758, ../sass/ultraligero.scss */
+  .nosotros-page {
+    margin-top: -10px;
+  }
+}
+/* line 765, ../sass/ultraligero.scss */
+.nosotros-page .cita-nosotros {
+  background-color: #993399;
+  padding-bottom: 6.04167%;
+  padding-top: 6.04167%;
+}
+/* line 769, ../sass/ultraligero.scss */
+.nosotros-page .cita-nosotros h1 {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: white;
+  letter-spacing: .2px;
+  text-decoration: none;
+}
+/* line 778, ../sass/ultraligero.scss */
+.nosotros-page .cita-nosotros p {
+  font-weight: Normal;
+  font-size: 18px;
+  line-height: 32px;
+  font-style: italic;
+  color: white;
+  letter-spacing: .4px;
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+/* line 790, ../sass/ultraligero.scss */
+.nosotros-page .cita-expertos {
+  height: 100%!important;
+  padding: 6.04167%;
+}
+/* line 793, ../sass/ultraligero.scss */
+.nosotros-page .cita-expertos .contenedor-expertos {
+  bottom: 0px;
+  right: 0px;
+}
+/* line 797, ../sass/ultraligero.scss */
+.nosotros-page .cita-expertos h1 {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #330033;
+  letter-spacing: .2px;
+  text-decoration: none;
+}
+/* line 806, ../sass/ultraligero.scss */
+.nosotros-page .cita-expertos p {
+  font-weight: Normal;
+  font-size: 18px;
+  line-height: 32px;
+  font-style: italic;
+  color: #330033;
+  letter-spacing: .4px;
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+
+/* line 819, ../sass/ultraligero.scss */
+.nosotros-home {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+/* line 823, ../sass/ultraligero.scss */
+.nosotros-home p {
+  width: 100%;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 30px;
+  color: #330033;
+  letter-spacing: .2px;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+/* line 832, ../sass/ultraligero.scss */
+.nosotros-home p a {
+  width: 100%;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 30px;
+  color: #993399;
+  letter-spacing: .2px;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+/* line 843, ../sass/ultraligero.scss */
+.nosotros-home .cuadro {
+  margin-bottom: 20px;
+}
+/* line 845, ../sass/ultraligero.scss */
+.nosotros-home .cuadro h3 {
+  width: 100%;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  color: #330033;
+  letter-spacing: .2px;
+  text-decoration: none;
+  border-bottom: 1.5px solid #330033;
+}
+/* line 855, ../sass/ultraligero.scss */
+.nosotros-home .cuadro img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 861, ../sass/ultraligero.scss */
+.footer-valparaiso {
+  background-color: white;
+}
+/* line 865, ../sass/ultraligero.scss */
+.footer-valparaiso .mancha-footer {
+  padding-top: 80px;
+  padding-bottom: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background-color: #993399;
+}
+@media only screen and (max-width: 568px) {
+  /* line 865, ../sass/ultraligero.scss */
+  .footer-valparaiso .mancha-footer {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-bottom: 160px;
+  }
+}
+/* line 878, ../sass/ultraligero.scss */
+.footer-valparaiso .mancha-empleo {
+  padding: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: #FFCC66;
+}
+@media only screen and (max-width: 568px) {
+  /* line 878, ../sass/ultraligero.scss */
+  .footer-valparaiso .mancha-empleo {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+/* line 887, ../sass/ultraligero.scss */
+.footer-valparaiso .mancha-empleo p, .footer-valparaiso .mancha-empleo a {
+  text-align: center;
+  font-size: 20px;
+  line-height: 28px;
+  color: #993399;
+  letter-spacing: .2px;
+  text-decoration: none;
+}
+/* line 896, ../sass/ultraligero.scss */
+.footer-valparaiso .mancha-empleo a {
+  font-weight: bold;
+}
+/* line 902, ../sass/ultraligero.scss */
+.footer-valparaiso .links-footer {
+  padding-top: 10px;
+  padding-left: 60px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 902, ../sass/ultraligero.scss */
+  .footer-valparaiso .links-footer {
+    padding-left: 0px;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 568px) {
+  /* line 910, ../sass/ultraligero.scss */
+  .footer-valparaiso .links-footer a {
+    display: block !important;
+    padding-top: 10px;
+  }
+}
+/* line 916, ../sass/ultraligero.scss */
+.footer-valparaiso .links-footer a, .footer-valparaiso .links-footer span {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+  letter-spacing: .2px;
+  text-decoration: none;
+  display: inline-block;
+}
+/* line 926, ../sass/ultraligero.scss */
+.footer-valparaiso .links-footer span {
+  margin-left: 16px;
+  margin-right: 10px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 926, ../sass/ultraligero.scss */
+  .footer-valparaiso .links-footer span {
+    display: none;
+  }
+}
+/* line 933, ../sass/ultraligero.scss */
+.footer-valparaiso .links-footer a:hover {
+  font-weight: normal;
+}
+/* line 937, ../sass/ultraligero.scss */
+.footer-valparaiso .logo-valparaiso-footer {
+  margin-top: 50px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 937, ../sass/ultraligero.scss */
+  .footer-valparaiso .logo-valparaiso-footer {
+    margin-top: 20px;
+    text-align: center !important;
+  }
+  /* line 941, ../sass/ultraligero.scss */
+  .footer-valparaiso .logo-valparaiso-footer a {
+    width: 100%;
+  }
+}
+/* line 946, ../sass/ultraligero.scss */
+.footer-valparaiso .logo-valparaiso-footer img {
+  width: 154px;
+  margin-left: 60px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 946, ../sass/ultraligero.scss */
+  .footer-valparaiso .logo-valparaiso-footer img {
+    margin-left: 0px;
+    text-align: center !important;
+  }
+}
+/* line 955, ../sass/ultraligero.scss */
+.footer-valparaiso .logo-periferico-footer {
+  text-align: right;
+}
+@media only screen and (max-width: 568px) {
+  /* line 955, ../sass/ultraligero.scss */
+  .footer-valparaiso .logo-periferico-footer {
+    margin-left: 0px;
+    text-align: center !important;
+  }
+}
+/* line 961, ../sass/ultraligero.scss */
+.footer-valparaiso .logo-periferico-footer img {
+  width: 200px;
+  margin-right: 60px;
+  margin-top: 18px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 961, ../sass/ultraligero.scss */
+  .footer-valparaiso .logo-periferico-footer img {
+    margin-right: 0px;
+    margin-top: 40px;
+    text-align: center !important;
+  }
+}
+/* line 973, ../sass/ultraligero.scss */
+.footer-valparaiso .mapa-sitio {
+  padding-left: 60px;
+}
+/* line 976, ../sass/ultraligero.scss */
+.footer-valparaiso .mapa-sitio h3 {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
+  color: white;
+  letter-spacing: .2px;
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+/* line 985, ../sass/ultraligero.scss */
+.footer-valparaiso .mapa-sitio a {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: white;
+  letter-spacing: .2px;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+}
+/* line 995, ../sass/ultraligero.scss */
+.footer-valparaiso .mapa-sitio a:hover {
+  font-weight: 500;
+}
+/* line 998, ../sass/ultraligero.scss */
+.footer-valparaiso .mapa-sitio img {
+  width: 100%;
+  height: auto;
+}
+/* line 1003, ../sass/ultraligero.scss */
+.footer-valparaiso .contacto-footer {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  text-align: right;
+  padding-right: 60px;
+}
+@media only screen and (max-width: 800px) {
+  /* line 1003, ../sass/ultraligero.scss */
+  .footer-valparaiso .contacto-footer {
+    padding-right: 60px;
+    position: relative;
+    bottom: 0px;
+    right: 0px;
+  }
+}
+@media only screen and (max-width: 568px) {
+  /* line 1003, ../sass/ultraligero.scss */
+  .footer-valparaiso .contacto-footer {
+    padding-right: 0px;
+    text-align: center;
+  }
+}
+/* line 1019, ../sass/ultraligero.scss */
+.footer-valparaiso .contacto-footer h3 {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
+  color: white;
+  letter-spacing: .2px;
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+/* line 1031, ../sass/ultraligero.scss */
+.footer-valparaiso .contacto-footer .links-grandes div {
+  display: inline-block;
+}
+/* line 1035, ../sass/ultraligero.scss */
+.footer-valparaiso .contacto-footer .links-grandes a {
+  float: right;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 34px;
+  color: white;
+  letter-spacing: .2px;
+  text-decoration: none;
+}
+/* line 1043, ../sass/ultraligero.scss */
+.footer-valparaiso .contacto-footer .links-grandes a span {
+  margin-bottom: 4px;
+}
+/* line 1048, ../sass/ultraligero.scss */
+.footer-valparaiso .contacto-footer .links-grandes .icono-footer {
+  margin-left: 20px;
+  margin-right: 10px;
+  width: 34px;
+  height: 34px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 1048, ../sass/ultraligero.scss */
+  .footer-valparaiso .contacto-footer .links-grandes .icono-footer {
+    margin-left: 0px;
+  }
+}
+/* line 1060, ../sass/ultraligero.scss */
+.footer-valparaiso .contacto-footer .links-chicos a, .footer-valparaiso .contacto-footer .links-chicos span {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: white;
+  letter-spacing: .2px;
+  text-decoration: none;
+  display: inline-block;
+}
+@media only screen and (max-width: 568px) {
+  /* line 1060, ../sass/ultraligero.scss */
+  .footer-valparaiso .contacto-footer .links-chicos a, .footer-valparaiso .contacto-footer .links-chicos span {
+    display: block;
+    padding-bottom: 14px;
+  }
+}
+/* line 1074, ../sass/ultraligero.scss */
+.footer-valparaiso .contacto-footer .links-chicos span {
+  margin-left: 16px;
+  margin-right: 10px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 1074, ../sass/ultraligero.scss */
+  .footer-valparaiso .contacto-footer .links-chicos span {
+    display: none;
+  }
+}
+/* line 1082, ../sass/ultraligero.scss */
+.footer-valparaiso .contacto-footer img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 1088, ../sass/ultraligero.scss */
+.margin-30 {
+  margin-bottom: 30px;
+}
+
+/* line 1091, ../sass/ultraligero.scss */
+.margin-20 {
+  margin-bottom: 20px;
+}
+
+/* line 1094, ../sass/ultraligero.scss */
+.margin-10 {
+  margin-bottom: 10px;
+}
+
+/* line 1097, ../sass/ultraligero.scss */
+.swiper-siguiente {
+  float: right;
+  top: 50%;
+  right: 30px;
+  position: absolute;
+  display: inline-block;
+  z-index: 100;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: white;
+  letter-spacing: .2px;
+  text-decoration: none;
+  display: inline-block;
+  width: 22px;
+  height: auto;
+}
+
+/* line 1115, ../sass/ultraligero.scss */
+.swiper-anterior {
+  float: left;
+  top: 50%;
+  left: 30px;
+  position: absolute;
+  display: inline-block;
+  z-index: 100;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: white;
+  letter-spacing: .2px;
+  text-decoration: none;
+  display: inline-block;
+  width: 22px;
+  height: auto;
+}
+
+/* line 1132, ../sass/ultraligero.scss */
+.extras-home {
+  padding-top: 24px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 1132, ../sass/ultraligero.scss */
+  .extras-home {
+    text-align: center;
+  }
+  /* line 1137, ../sass/ultraligero.scss */
+  .extras-home img {
+    max-height: 180px;
+    width: auto;
+  }
+}
+/* line 1142, ../sass/ultraligero.scss */
+.extras-home p {
+  margin-top: 20px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 1142, ../sass/ultraligero.scss */
+  .extras-home p {
+    text-align: center;
+  }
+}
+/* line 1149, ../sass/ultraligero.scss */
+.extras-home .extra-izquierda {
+  padding-right: 30px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 1149, ../sass/ultraligero.scss */
+  .extras-home .extra-izquierda {
+    padding-right: 0px;
+  }
+}
+/* line 1156, ../sass/ultraligero.scss */
+.extras-home .extra-centro {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 1156, ../sass/ultraligero.scss */
+  .extras-home .extra-centro {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+/* line 1166, ../sass/ultraligero.scss */
+.extras-home .extra-derecha {
+  padding-left: 30px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 1166, ../sass/ultraligero.scss */
+  .extras-home .extra-derecha {
+    padding-left: 0px;
+  }
+}
+
+/* line 1174, ../sass/ultraligero.scss */
+.cuerpo-estudios {
+  padding-bottom: 40px;
+}
+/* line 1178, ../sass/ultraligero.scss */
+.cuerpo-estudios h3 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  color: #993399;
+  letter-spacing: .2px;
+  text-decoration: none;
+  text-align: left;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+/* line 1191, ../sass/ultraligero.scss */
+.cuerpo-estudios p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+}
+/* line 1196, ../sass/ultraligero.scss */
+.cuerpo-estudios .listado-estudios {
+  padding-right: 40px;
+}
+@media only screen and (max-width: 800px) {
+  /* line 1196, ../sass/ultraligero.scss */
+  .cuerpo-estudios .listado-estudios {
+    padding-right: 0px;
+  }
+}
+
+/* line 1205, ../sass/ultraligero.scss */
+.menu-estudios {
+  position: fixed;
+  padding-left: 40px;
+  padding-top: 40px;
+}
+@media only screen and (max-width: 800px) {
+  /* line 1205, ../sass/ultraligero.scss */
+  .menu-estudios {
+    display: none;
+  }
+}
+/* line 1212, ../sass/ultraligero.scss */
+.menu-estudios h1 {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 22px;
+  color: #330033;
+  letter-spacing: .2px;
+  text-decoration: none;
+  text-align: left;
+  margin-bottom: 20px;
+}
+/* line 1223, ../sass/ultraligero.scss */
+.menu-estudios a {
+  padding-left: 40px;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #993399;
+  letter-spacing: .2px;
+  text-decoration: none;
+  display: block;
+}
+@media only screen and (max-width: 800px) {
+  /* line 1223, ../sass/ultraligero.scss */
+  .menu-estudios a {
+    padding-left: 40px;
+  }
+}
+/* line 1236, ../sass/ultraligero.scss */
+.menu-estudios a:hover {
+  font-weight: normal;
+}
+
+/* line 1241, ../sass/ultraligero.scss */
+.estudio-solo {
+  border-bottom: 1px solid #330033;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+}
+/* line 1245, ../sass/ultraligero.scss */
+.estudio-solo div {
+  display: inline-block;
+}
+/* line 1248, ../sass/ultraligero.scss */
+.estudio-solo .dias {
+  float: right;
+}
+/* line 1251, ../sass/ultraligero.scss */
+.estudio-solo h4 {
+  font-weight: Normal;
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: #330033;
+  letter-spacing: .2px;
+  text-align: left;
+}
+/* line 1263, ../sass/ultraligero.scss */
+.estudio-solo span {
+  text-transform: capitalize;
+  font-weight: Normal;
+  font-size: 14px;
+  line-height: 24px;
+  display: inline-block;
+  color: #330033;
+  letter-spacing: .2px;
+  display: inline-block;
+  float: right;
+  margin-left: 20px;
+  text-align: right;
+}
+
+/* line 1282, ../sass/ultraligero.scss */
+.resultados-linea {
+  padding-bottom: 80px;
+}
+/* line 1284, ../sass/ultraligero.scss */
+.resultados-linea h1 {
+  font-weight: 500;
+  font-size: 28px;
+  color: #330033;
+  letter-spacing: .2px;
+  text-decoration: none;
+  text-align: left;
+  margin-bottom: 40px;
+  margin-top: 80px;
+  padding-left: 40px;
+}
+/* line 1298, ../sass/ultraligero.scss */
+.resultados-linea .busqueda-rapida {
+  background-color: #fadfb4;
+  color: #330033;
+  padding: 40px;
+}
+/* line 1305, ../sass/ultraligero.scss */
+.resultados-linea .busqueda-rapida form textfield, .resultados-linea .busqueda-rapida form input {
+  color: white;
+  border-bottom: 1.5px solid #330033;
+}
+/* line 1309, ../sass/ultraligero.scss */
+.resultados-linea .busqueda-rapida form label {
+  color: white;
+  border-bottom: 1.5px solid #330033;
+}
+/* line 1314, ../sass/ultraligero.scss */
+.resultados-linea .busqueda-rapida form textarea {
+  color: #330033;
+}
+/* line 1318, ../sass/ultraligero.scss */
+.resultados-linea .busqueda-rapida form input[type=submit] {
+  color: #330033;
+}
+/* line 1321, ../sass/ultraligero.scss */
+.resultados-linea .busqueda-rapida form ::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #330033;
+}
+/* line 1324, ../sass/ultraligero.scss */
+.resultados-linea .busqueda-rapida form ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #330033;
+}
+/* line 1327, ../sass/ultraligero.scss */
+.resultados-linea .busqueda-rapida form :-ms-input-placeholder {
+  /* IE 10+ */
+  color: #330033;
+}
+/* line 1330, ../sass/ultraligero.scss */
+.resultados-linea .busqueda-rapida form :-moz-placeholder {
+  /* Firefox 18- */
+  color: #330033;
+}
+/* line 1333, ../sass/ultraligero.scss */
+.resultados-linea .busqueda-rapida form input::placeholder {
+  color: #330033;
+}
+
+@media only screen and (max-width: 800px) {
+  /* line 1340, ../sass/ultraligero.scss */
+  .desaparece-medio {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  /* line 1346, ../sass/ultraligero.scss */
+  .desaparece-chico {
+    display: none !important;
+  }
+}
+
+/* line 1351, ../sass/ultraligero.scss */
+.desaparece-grande {
+  display: none;
+}
+@media only screen and (max-width: 568px) {
+  /* line 1351, ../sass/ultraligero.scss */
+  .desaparece-grande {
+    display: block;
+  }
+}
+
+/* line 1361, ../sass/ultraligero.scss */
+.busqueda-link-estudios {
+  padding-top: 20px;
+}
+/* line 1363, ../sass/ultraligero.scss */
+.busqueda-link-estudios p {
+  color: #993399;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: .2px;
+  text-decoration: none;
+  text-align: left;
+  margin-bottom: 20px;
+}
+/* line 1372, ../sass/ultraligero.scss */
+.busqueda-link-estudios a {
+  text-decoration: none;
+  color: #993399;
+}
+
+/* line 1379, ../sass/ultraligero.scss */
+.portada {
+  float: right;
+  position: absolute;
+  top: 0px;
+  padding-right: 50px;
+}
+/* line 1384, ../sass/ultraligero.scss */
+.portada img {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+/* line 1388, ../sass/ultraligero.scss */
+.portada .blanco-slide {
+  width: 100%;
+  height: 100%;
+  background: white;
+  background: -moz-linear-gradient(0deg, white 0%, rgba(255, 255, 255, 0.90938) 35%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-linear-gradient(0deg, white 0%, rgba(255, 255, 255, 0.90938) 35%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0.90938) 35%, rgba(255, 255, 255, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+  z-index: 2;
+  position: absolute;
+}
+
+/* line 1402, ../sass/ultraligero.scss */
+.frase-portada {
+  padding-top: 70px;
+  margin-bottom: 60px;
+}
+/* line 1405, ../sass/ultraligero.scss */
+.frase-portada h1 {
+  font-weight: normal;
+  text-align: left;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 48px;
+  color: #993399;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-shadow: 2px 2px white;
+}
+@media only screen and (max-width: 568px) {
+  /* line 1405, ../sass/ultraligero.scss */
+  .frase-portada h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+/* line 1422, ../sass/ultraligero.scss */
+.frase-portada h1 em {
+  font-style: italic;
+}
+/* line 1425, ../sass/ultraligero.scss */
+.frase-portada h1 img {
+  width: 28px;
+  height: 28px;
+}
+/* line 1431, ../sass/ultraligero.scss */
+.frase-portada hr {
+  border: 2px solid #993399;
+  box-shadow: 2px 2px white;
+}
+
+/* line 1436, ../sass/ultraligero.scss */
+p {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 26px;
+  color: #330033;
+  letter-spacing: 1px;
+  font-weight: normal;
+  text-align: left;
+}
+/* line 1444, ../sass/ultraligero.scss */
+p em {
+  font-size: 22px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* line 1450, ../sass/ultraligero.scss */
+.ubicacion {
+  padding-top: 80px;
+  padding-bottom: 120px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 1450, ../sass/ultraligero.scss */
+  .ubicacion {
+    padding-bottom: 40px;
+  }
+}
+/* line 1456, ../sass/ultraligero.scss */
+.ubicacion .informacion-ubicacion {
+  padding: 40px;
+}
+/* line 1458, ../sass/ultraligero.scss */
+.ubicacion .informacion-ubicacion p {
+  width: 100%;
+  text-align: center !important;
+}
+/* line 1463, ../sass/ultraligero.scss */
+.ubicacion .cobertura {
+  margin-top: 40px;
+}
+
+/* line 1469, ../sass/ultraligero.scss */
+.servicios-funerales {
+  padding-top: 120px;
+  overflow: visible;
+}
+/* line 1472, ../sass/ultraligero.scss */
+.servicios-funerales .funerales-overflow {
+  overflow: visible;
+}
+/* line 1474, ../sass/ultraligero.scss */
+.servicios-funerales .funerales-overflow .servicios-funerales-info {
+  margin-right: 40px;
+  margin-bottom: 40px;
+  background-color: #f4f1ec;
+}
+@media only screen and (max-width: 568px) {
+  /* line 1474, ../sass/ultraligero.scss */
+  .servicios-funerales .funerales-overflow .servicios-funerales-info {
+    margin-right: 0px;
+    background-color: white;
+  }
+}
+/* line 1482, ../sass/ultraligero.scss */
+.servicios-funerales .funerales-overflow .servicios-funerales-info .funerales-texto {
+  width: 48.75%;
+  padding: 40px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 1482, ../sass/ultraligero.scss */
+  .servicios-funerales .funerales-overflow .servicios-funerales-info .funerales-texto {
+    text-align: center;
+    width: 100%;
+    padding: 40px;
+    background-color: #f4f1ec;
+  }
+}
+/* line 1492, ../sass/ultraligero.scss */
+.servicios-funerales .funerales-overflow .servicios-funerales-info .nosotros-texto {
+  width: 31.66667%;
+  padding: 40px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 1492, ../sass/ultraligero.scss */
+  .servicios-funerales .funerales-overflow .servicios-funerales-info .nosotros-texto {
+    text-align: center;
+    width: 100%;
+    padding: 40px;
+    background-color: #f4f1ec;
+  }
+}
+/* line 1502, ../sass/ultraligero.scss */
+.servicios-funerales .funerales-overflow .servicios-funerales-info .funerales-imagen {
+  position: absolute;
+  width: 40.20833%;
+  top: 0px;
+  right: 0px;
+  margin-top: 40px;
+  height: 100%;
+}
+@media only screen and (max-width: 568px) {
+  /* line 1502, ../sass/ultraligero.scss */
+  .servicios-funerales .funerales-overflow .servicios-funerales-info .funerales-imagen {
+    width: 100%;
+    position: relative;
+    margin-top: 0px;
+  }
+}
+/* line 1513, ../sass/ultraligero.scss */
+.servicios-funerales .funerales-overflow .servicios-funerales-info .funerales-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* line 1519, ../sass/ultraligero.scss */
+.servicios-funerales .funerales-overflow .servicios-funerales-info .nosotros-imagen {
+  position: absolute;
+  width: 65.83333%;
+  top: 0px;
+  right: 0px;
+  margin-top: 40px;
+  height: 100%;
+}
+@media only screen and (max-width: 568px) {
+  /* line 1519, ../sass/ultraligero.scss */
+  .servicios-funerales .funerales-overflow .servicios-funerales-info .nosotros-imagen {
+    width: 100%;
+    position: relative;
+  }
+}
+/* line 1529, ../sass/ultraligero.scss */
+.servicios-funerales .funerales-overflow .servicios-funerales-info .nosotros-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* line 1539, ../sass/ultraligero.scss */
+.contacto-facebook {
+  margin-top: 20px;
+  background-color: #ffccff;
+}
+/* line 1543, ../sass/ultraligero.scss */
+.contacto-facebook em {
+  font-weight: 20px;
+}
+
+/* line 1548, ../sass/ultraligero.scss */
+.promo-eliseo {
+  margin-top: 80px;
+}
+
+/* line 1553, ../sass/ultraligero.scss */
+.imagen-eliseo {
+  width: 100%;
+  display: block;
+}
+
+/* line 1557, ../sass/ultraligero.scss */
+.plan-eliseo {
+  margin-top: 100px;
+}
+/* line 1559, ../sass/ultraligero.scss */
+.plan-eliseo .cuadro {
+  height: 100%;
+}
+/* line 1562, ../sass/ultraligero.scss */
+.plan-eliseo img {
+  width: 100%;
+}
+/* line 1565, ../sass/ultraligero.scss */
+.plan-eliseo h5 {
+  padding-bottom: 30px;
+  width: 100%;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 44px;
+  color: #330033;
+  letter-spacing: .2px;
+  text-decoration: none;
+  text-align: left;
+  font-color: #330033;
+  display: block;
+  font-weight: bold;
+  text-align: center;
+}
+/* line 1582, ../sass/ultraligero.scss */
+.plan-eliseo .contenedor-promo {
+  padding-left: 60px;
+  width: 65%;
+  display: inline-block;
+  float: right;
+  position: absolute;
+  height: 100%;
+}
+/* line 1589, ../sass/ultraligero.scss */
+.plan-eliseo .contenedor-promo .centrado-promo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* line 1595, ../sass/ultraligero.scss */
+.plan-eliseo .imagen-promo-eliseo {
+  width: 35%;
+  float: left;
+  position: relative;
+}
+/* line 1600, ../sass/ultraligero.scss */
+.plan-eliseo .imagen-eliseo {
+  width: 100%;
+  display: block;
+}
+/* line 1605, ../sass/ultraligero.scss */
+.plan-eliseo .consulta-estado {
+  background-color: #993399;
+  color: white !important;
+  padding: 40px;
+}
+/* line 1610, ../sass/ultraligero.scss */
+.plan-eliseo .consulta-estado form {
+  color: white;
+  width: 100%;
+}
+/* line 1613, ../sass/ultraligero.scss */
+.plan-eliseo .consulta-estado form textfield, .plan-eliseo .consulta-estado form input {
+  color: white;
+  font-family: "Source", sans-serif;
+  line-height: 29px;
+  font-size: 20px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  background-color: transparent;
+  line-height: 20px;
+  height: 34px;
+  width: 100%;
+  padding-left: 0px;
+  margin-bottom: 0px;
+  max-width: 500px;
+}
+/* line 1630, ../sass/ultraligero.scss */
+.plan-eliseo .consulta-estado form label {
+  font-family: "Source", sans-serif;
+  line-height: 29px;
+  font-size: 20px;
+  padding-left: 25px;
+  border-radius: 0;
+  -webkit-appearance: none;
+  background-color: transparent;
+  line-height: 20px;
+  height: 34px;
+  letter-spacing: .1px;
+  padding-left: 0px;
+  margin-bottom: 0px;
+  max-width: 500px;
+}
+/* line 1644, ../sass/ultraligero.scss */
+.plan-eliseo .consulta-estado form label span {
+  font-size: 40px;
+  padding-left: 3px;
+  padding-right: 13px;
+}
+/* line 1653, ../sass/ultraligero.scss */
+.plan-eliseo .consulta-estado form input[type=submit] {
+  color: white;
+  letter-spacing: .1px;
+  margin-top: 14px;
+  font-family: "Source", sans-serif;
+  border: 0px !important;
+  font-size: 20px;
+  width: 100%;
+  line-height: 25px;
+  border-radius: 0;
+  -webkit-appearance: none;
+  background-color: transparent;
+  height: 30px;
+  margin-bottom: 0px !important;
+  text-decoration: none;
+  text-align: right;
+  font-weight: 500;
+}
+/* line 1671, ../sass/ultraligero.scss */
+.plan-eliseo .consulta-estado form ::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  opacity: 1 !important;
+}
+/* line 1674, ../sass/ultraligero.scss */
+.plan-eliseo .consulta-estado form ::-moz-placeholder {
+  /* Firefox 19+ */
+  opacity: 1 !important;
+}
+/* line 1677, ../sass/ultraligero.scss */
+.plan-eliseo .consulta-estado form :-ms-input-placeholder {
+  /* IE 10+ */
+  opacity: 1 !important;
+}
+/* line 1680, ../sass/ultraligero.scss */
+.plan-eliseo .consulta-estado form :-moz-placeholder {
+  /* Firefox 18- */
+  opacity: 1 !important;
+}
+/* line 1683, ../sass/ultraligero.scss */
+.plan-eliseo .consulta-estado form input::placeholder {
+  opacity: 1 !important;
+}
+
+/* line 1691, ../sass/ultraligero.scss */
+.slider-home {
+  height: 100%;
+}
+/* line 1693, ../sass/ultraligero.scss */
+.slider-home .swiper-pagination {
+  bottom: 60px !important;
+}
+/* line 1695, ../sass/ultraligero.scss */
+.slider-home .swiper-pagination .swiper-pagination-bullet-active {
+  background: white;
+}
+/* line 1698, ../sass/ultraligero.scss */
+.slider-home .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border-radius: 100%;
+  border: 1.7px solid white;
+  background: #993399;
+}
+/* line 1707, ../sass/ultraligero.scss */
+.slider-home .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+/* line 1711, ../sass/ultraligero.scss */
+.slider-home .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+/* line 1731, ../sass/ultraligero.scss */
+.slider-obituarios {
+  height: 100%;
+}
+/* line 1733, ../sass/ultraligero.scss */
+.slider-obituarios .swiper-pagination {
+  position: relative !important;
+  margin-top: 20px;
+}
+/* line 1736, ../sass/ultraligero.scss */
+.slider-obituarios .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: white;
+}
+/* line 1739, ../sass/ultraligero.scss */
+.slider-obituarios .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border-radius: 100%;
+  border: 1.7px solid white;
+  background-color: #993399;
+}
+/* line 1748, ../sass/ultraligero.scss */
+.slider-obituarios .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+/* line 1752, ../sass/ultraligero.scss */
+.slider-obituarios .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+/* line 1772, ../sass/ultraligero.scss */
+.contenedor-logo-movimiento {
+  z-index: 110;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+}
+
+/* line 1778, ../sass/ultraligero.scss */
+.contenedor-logo {
+  width: 45px;
+  float: right;
+  z-index: 100;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 1778, ../sass/ultraligero.scss */
+  .contenedor-logo {
+    margin-bottom: 90px;
+  }
+}
+/* line 1788, ../sass/ultraligero.scss */
+.contenedor-logo .animacionportada {
+  display: inline-block;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+}
+/* line 1793, ../sass/ultraligero.scss */
+.contenedor-logo .animacionportada .animacionportada_img {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+/* line 1800, ../sass/ultraligero.scss */
+.contenedor-logo .animacionportada .animacionportada_img img {
+  left: 0px;
+  top: 0px;
+  display: none;
+  width: 100%;
+  height: auto;
+}
+
+/* line 1810, ../sass/ultraligero.scss */
+.contenedor-logo-fixed {
+  position: fixed;
+}
+
+/* line 1814, ../sass/ultraligero.scss */
+.contenedor-logo-static {
+  position: fixed;
+}
+
+/* line 1819, ../sass/ultraligero.scss */
+.links-grandes {
+  padding-top: 20px;
+}
+/* line 1821, ../sass/ultraligero.scss */
+.links-grandes .contenedor-link {
+  border-bottom: 2px solid #993399;
+  width: 100%;
+  text-align: center;
+}
+/* line 1825, ../sass/ultraligero.scss */
+.links-grandes .contenedor-link .link-centrado {
+  display: inline-block;
+  position: relative;
+}
+/* line 1832, ../sass/ultraligero.scss */
+.links-grandes a {
+  float: left;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: #993399;
+  letter-spacing: .2px;
+  text-decoration: none;
+}
+/* line 1840, ../sass/ultraligero.scss */
+.links-grandes a span {
+  margin-bottom: 4px;
+}
+/* line 1845, ../sass/ultraligero.scss */
+.links-grandes .icono-footer {
+  margin-right: 10px;
+  width: 26px;
+  height: 26px;
+}
+
+/* line 1852, ../sass/ultraligero.scss */
+.links-recursos {
+  padding-top: 4px;
+}
+/* line 1854, ../sass/ultraligero.scss */
+.links-recursos .contenedor-link {
+  border-bottom: 2px solid #993399;
+  width: 100%;
+  text-align: center;
+}
+/* line 1858, ../sass/ultraligero.scss */
+.links-recursos .contenedor-link .link-centrado {
+  display: inline-block;
+  position: relative;
+}
+/* line 1865, ../sass/ultraligero.scss */
+.links-recursos a {
+  float: left;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  color: #993399;
+  letter-spacing: .2px;
+  text-decoration: none;
+}
+/* line 1873, ../sass/ultraligero.scss */
+.links-recursos a span {
+  margin-bottom: 4px;
+}
+/* line 1878, ../sass/ultraligero.scss */
+.links-recursos .icono-footer {
+  margin-right: 10px;
+  width: 26px;
+  height: 26px;
+}
+
+/* line 1885, ../sass/ultraligero.scss */
+h2 {
+  letter-spacing: .2px;
+  font-weight: Bold;
+  color: #330033;
+  font-size: 28px;
+  line-height: 40px;
+  padding-bottom: 40px;
+}
+
+/* line 1895, ../sass/ultraligero.scss */
+.plan-resumen {
+  Padding-top: 20px;
+  margin-bottom: 40px;
+}
+/* line 1898, ../sass/ultraligero.scss */
+.plan-resumen .descripcion-icono {
+  text-align: center;
+  display: block;
+}
+/* line 1901, ../sass/ultraligero.scss */
+.plan-resumen .descripcion-icono div {
+  display: inline-block;
+  float: left;
+}
+/* line 1906, ../sass/ultraligero.scss */
+.plan-resumen img {
+  width: 100%;
+}
+/* line 1910, ../sass/ultraligero.scss */
+.plan-resumen h4 {
+  padding-left: 10px;
+  letter-spacing: .2px;
+  color: #330033;
+  font-size: 18px;
+  line-height: 46px;
+  display: inline-block;
+}
+
+/* line 1919, ../sass/ultraligero.scss */
+.links-compartir {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 14px;
+  padding-right: 14px;
+  display: inline-block;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+}
+/* line 1921, ../sass/ultraligero.scss */
+.links-compartir.face {
+  background-color: #00ABE9;
+}
+/* line 1924, ../sass/ultraligero.scss */
+.links-compartir.whats {
+  background-color: #4AAE20;
+}
+/* line 1927, ../sass/ultraligero.scss */
+.links-compartir.liquidacon {
+  background-color: #FFCC66;
+}
+/* line 1938, ../sass/ultraligero.scss */
+.links-compartir a {
+  float: left;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
+  height: 28px;
+  color: white;
+  letter-spacing: .2px;
+  text-decoration: none;
+}
+/* line 1947, ../sass/ultraligero.scss */
+.links-compartir a span {
+  margin-bottom: 4px;
+}
+/* line 1952, ../sass/ultraligero.scss */
+.links-compartir .icono-footer {
+  margin-right: 10px;
+  width: 26px;
+  height: 26px;
+}
+
+/* line 1959, ../sass/ultraligero.scss */
+.links-compartir-submenu {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  display: block;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+}
+/* line 1961, ../sass/ultraligero.scss */
+.links-compartir-submenu.face {
+  background-color: #00ABE9;
+}
+/* line 1964, ../sass/ultraligero.scss */
+.links-compartir-submenu.whats {
+  background-color: #4AAE20;
+}
+/* line 1976, ../sass/ultraligero.scss */
+.links-compartir-submenu a {
+  font-size: 14px;
+  line-height: 28px;
+  height: 22px;
+  color: white;
+  letter-spacing: px;
+  text-decoration: none;
+}
+/* line 1985, ../sass/ultraligero.scss */
+.links-compartir-submenu a span {
+  margin-bottom: 10px;
+}
+/* line 1990, ../sass/ultraligero.scss */
+.links-compartir-submenu .icono-footer {
+  margin-right: 10px;
+  width: 26px;
+  height: 26px;
+}
+
+/* line 1998, ../sass/ultraligero.scss */
+.recursos-single {
+  padding-top: 80px;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+/* line 2005, ../sass/ultraligero.scss */
+.recursos .recursos-color {
+  padding-bottom: 40px;
+}
+/* line 2009, ../sass/ultraligero.scss */
+.recursos h1 {
+  font-weight: normal;
+  text-align: left;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 48px;
+  color: #993399;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-shadow: 2px 2px white;
+}
+@media only screen and (max-width: 568px) {
+  /* line 2009, ../sass/ultraligero.scss */
+  .recursos h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+/* line 2026, ../sass/ultraligero.scss */
+.recursos h1 em {
+  font-style: italic;
+}
+/* line 2029, ../sass/ultraligero.scss */
+.recursos h1 img {
+  width: 28px;
+  height: 28px;
+}
+/* line 2035, ../sass/ultraligero.scss */
+.recursos h2 {
+  padding-bottom: 10px !important;
+  font-weight: normal;
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+  color: #330033;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-shadow: 2px 2px white;
+}
+/* line 2047, ../sass/ultraligero.scss */
+.recursos h2 em {
+  font-style: italic;
+}
+/* line 2050, ../sass/ultraligero.scss */
+.recursos h2 img {
+  width: 28px;
+  height: 28px;
+}
+/* line 2057, ../sass/ultraligero.scss */
+.recursos .contenido-recursos {
+  padding-bottom: 20px;
+}
+/* line 2059, ../sass/ultraligero.scss */
+.recursos .contenido-recursos p {
+  width: 100%;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 26px;
+  color: #330033;
+  letter-spacing: .2px;
+  text-decoration: none;
+  text-align: center;
+  font-color: #330033;
+}
+/* line 2069, ../sass/ultraligero.scss */
+.recursos .contenido-recursos p span {
+  display: block;
+  font-weight: normal;
+  font-style: italic;
+}
+/* line 2076, ../sass/ultraligero.scss */
+.recursos .contenido-recursos img {
+  width: 100%;
+  height: auto;
+}
+/* line 2080, ../sass/ultraligero.scss */
+.recursos .contenido-recursos a {
+  text-decoration: none;
+}
+
+/* line 2085, ../sass/ultraligero.scss */
+.bolsa {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+/* line 2088, ../sass/ultraligero.scss */
+.bolsa .bolsa-color {
+  padding-top: 80px;
+  background: #ffccff;
+}
+/* line 2092, ../sass/ultraligero.scss */
+.bolsa .sucursal-bolsa {
+  padding-bottom: 50px;
+  text-align: centered;
+}
+/* line 2095, ../sass/ultraligero.scss */
+.bolsa .sucursal-bolsa h2 {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+}
+/* line 2099, ../sass/ultraligero.scss */
+.bolsa .sucursal-bolsa h2 span {
+  font-weight: normal;
+  font-style: italic;
+}
+/* line 2104, ../sass/ultraligero.scss */
+.bolsa .sucursal-bolsa .boton-bolsa {
+  background: #993399;
+  color: white;
+  margin: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 40px;
+  display: inline-block;
+  border-radius: 20px;
+  letter-spacing: .2px;
+  text-decoration: none;
+}
+
+/* line 2123, ../sass/ultraligero.scss */
+.postulacion {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+/* line 2126, ../sass/ultraligero.scss */
+.postulacion .postulacion-color {
+  padding-top: 80px;
+  background: #ffccff;
+}
+/* line 2130, ../sass/ultraligero.scss */
+.postulacion label {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: bold;
+  display: block;
+}
+/* line 2135, ../sass/ultraligero.scss */
+.postulacion label span {
+  font-weight: normal;
+  font-style: italic;
+}
+/* line 2140, ../sass/ultraligero.scss */
+.postulacion .boton-postulacion {
+  background: #993399;
+  color: white;
+  margin: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 40px;
+  display: inline-block;
+  border-radius: 20px;
+  letter-spacing: .2px;
+  text-decoration: none;
+}
+/* line 2156, ../sass/ultraligero.scss */
+.postulacion .sucursal-postulacion {
+  padding-bottom: 50px;
+  text-align: centered;
+}
+
+/* line 2164, ../sass/ultraligero.scss */
+.puesto-single {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+/* line 2167, ../sass/ultraligero.scss */
+.puesto-single .puesto-single-color {
+  padding-top: 80px;
+  background: #f4f1ec;
+}
+/* line 2171, ../sass/ultraligero.scss */
+.puesto-single .seccion-puesto {
+  margin-bottom: 28px;
+}
+/* line 2175, ../sass/ultraligero.scss */
+.puesto-single h3 {
+  font-size: 18px;
+  line-height: 26px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+/* line 2180, ../sass/ultraligero.scss */
+.puesto-single h3 span {
+  font-weight: normal;
+  font-style: italic;
+}
+/* line 2185, ../sass/ultraligero.scss */
+.puesto-single h4 {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: #330033;
+  letter-spacing: .2px;
+  text-decoration: none;
+}
+/* line 2195, ../sass/ultraligero.scss */
+.puesto-single .boton-bolsa {
+  text-align: center;
+  background: #993399;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-transform: Uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 40px;
+  display: block;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+/* line 2211, ../sass/ultraligero.scss */
+.puesto-single span {
+  border-bottom: 1px solid;
+  font-size: 18px;
+  line-height: 26px;
+  width: 100%;
+}
+/* line 2217, ../sass/ultraligero.scss */
+.puesto-single td, .puesto-single tr {
+  border-bottom: 1px solid #330033;
+  border-collapse: collapse;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+/* line 2225, ../sass/ultraligero.scss */
+.cerca {
+  text-align: center !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+/* line 2229, ../sass/ultraligero.scss */
+.cerca .cerca-color {
+  padding: 40px !important;
+  background: #f4f1ec;
+}
+/* line 2234, ../sass/ultraligero.scss */
+.cerca h2 {
+  color: #993399;
+  text-align: center;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+}
+/* line 2240, ../sass/ultraligero.scss */
+.cerca h2 span {
+  font-weight: normal;
+  font-style: italic;
+}
+/* line 2245, ../sass/ultraligero.scss */
+.cerca p {
+  text-align: center !important;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+}
+/* line 2250, ../sass/ultraligero.scss */
+.cerca p span {
+  font-weight: normal;
+  font-style: italic;
+}
+/* line 2255, ../sass/ultraligero.scss */
+.cerca img {
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+}
+
+/* line 2263, ../sass/ultraligero.scss */
+.formulario-obituario {
+  overflow: auto;
+}
+/* line 2265, ../sass/ultraligero.scss */
+.formulario-obituario .formulario-seccion {
+  padding-bottom: 40px;
+}
+/* line 2267, ../sass/ultraligero.scss */
+.formulario-obituario h3 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #330033;
+  letter-spacing: .2px;
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+/* line 2277, ../sass/ultraligero.scss */
+.formulario-obituario h4 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #330033;
+  letter-spacing: .2px;
+  text-decoration: none;
+}
+/* line 2290, ../sass/ultraligero.scss */
+.formulario-obituario select {
+  background-color: transparent;
+  margin-top: 2px;
+  color: #993399;
+  font-size: 20px;
+  font-family: "Source", sans-serif;
+  border: 0;
+  border-bottom: 2px solid #993399;
+  font-weight: bold;
+  border-radius: 0;
+  -moz-appearance: none;
+  /* Firefox */
+  -webkit-appearance: none;
+  /* Safari and Chrome */
+  appearance: none;
+  width: 100%;
+}
+/* line 2304, ../sass/ultraligero.scss */
+.formulario-obituario select:focus, .formulario-obituario select:active {
+  outline: 0;
+  color: #993399;
+  border-bottom-color: #993399;
+}
+/* line 2309, ../sass/ultraligero.scss */
+.formulario-obituario select:disabled {
+  background-color: transparent;
+}
+/* line 2313, ../sass/ultraligero.scss */
+.formulario-obituario textarea {
+  margin-top: 20px;
+  background-color: transparent;
+  resize: none;
+  border: none;
+  border-bottom: 2px solid #993399;
+  color: #993399;
+  font-size: 18px;
+  font-family: "Source", sans-serif;
+}
+/* line 2322, ../sass/ultraligero.scss */
+.formulario-obituario input[type=text] {
+  padding-bottom: 4px;
+  margin-bottom: 20px;
+  margin-top: 2px;
+  color: #993399;
+  font-size: 18px;
+  border: none;
+  border-bottom: 2px solid #993399;
+  width: 100%;
+  font-family: "Source", sans-serif;
+  background-color: transparent;
+}
+/* line 2334, ../sass/ultraligero.scss */
+.formulario-obituario input[type=text]:focus {
+  color: #993399;
+  border-bottom: 2px solid #993399;
+}
+/* line 2338, ../sass/ultraligero.scss */
+.formulario-obituario input[type=text]:disabled {
+  background-color: transparent;
+}
+/* line 2341, ../sass/ultraligero.scss */
+.formulario-obituario input[type=button], .formulario-obituario input[type=submit] {
+  padding: 0px;
+  background: transparent;
+  border: 0 none;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Source", sans-serif;
+  margin: 0px;
+  text-transform: uppercase;
+  margin-top: -2px;
+  letter-spacing: 1px;
+}
+/* line 2354, ../sass/ultraligero.scss */
+.formulario-obituario input[type=radio], .formulario-obituario input[type=file], .formulario-obituario input[type=checkbox] {
+  display: none;
+}
+/* line 2358, ../sass/ultraligero.scss */
+.formulario-obituario input[type=radio] + label, .formulario-obituario input[type=file] + label, .formulario-obituario input[type=checkbox] + label {
+  display: block;
+  margin-bottom: 10px;
+  height: 0;
+  padding-bottom: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #ffccff;
+  border: 4px solid #ffccff;
+}
+/* line 2376, ../sass/ultraligero.scss */
+.formulario-obituario input[type=radio] + label, .formulario-obituario input[type=checkbox] + label {
+  opacity: 0.8;
+}
+/* line 2379, ../sass/ultraligero.scss */
+.formulario-obituario input[type=submit] {
+  border-radius: 20px;
+  font-family: "Source", sans-serif;
+  border: 0px;
+  font-size: 20px;
+  width: 100%;
+  line-height: 40px;
+  color: white;
+  margin-bottom: 40px;
+  -webkit-appearance: none;
+  background-color: #993399;
+  margin-bottom: 0px !important;
+  text-decoration: none;
+  text-align: center;
+}
+/* line 2396, ../sass/ultraligero.scss */
+.formulario-obituario .boton-submit {
+  padding-bottom: 40px;
+}
+/* line 2399, ../sass/ultraligero.scss */
+.formulario-obituario input[type=radio]:checked + label, .formulario-obituario input[type=checkbox]:checked + label {
+  color: white;
+  opacity: 1;
+  background-image: none;
+  border: 4px solid #993399;
+  outline: 0;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  background-color: #993399;
+}
+/* line 2410, ../sass/ultraligero.scss */
+.formulario-obituario input[type=file]:checked + label, .formulario-obituario input[type=file]:selected + label {
+  color: white;
+  background-image: none;
+  border: 4px solid #993399;
+  outline: 0;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  background-color: #993399;
+}
+
+/* line 2423, ../sass/ultraligero.scss */
+.formulario-solicitud .formulario-seccion {
+  padding-bottom: 40px;
+}
+/* line 2427, ../sass/ultraligero.scss */
+.formulario-solicitud h3 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #330033;
+  letter-spacing: .2px;
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+/* line 2437, ../sass/ultraligero.scss */
+.formulario-solicitud h4 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #330033;
+  letter-spacing: .2px;
+  text-decoration: none;
+}
+/* line 2450, ../sass/ultraligero.scss */
+.formulario-solicitud select {
+  background-color: transparent;
+  margin-top: 2px;
+  color: #993399;
+  font-size: 20px;
+  font-family: "Source", sans-serif;
+  border: 0;
+  border-bottom: 2px solid #993399;
+  font-weight: bold;
+  border-radius: 0;
+  -moz-appearance: none;
+  /* Firefox */
+  -webkit-appearance: none;
+  /* Safari and Chrome */
+  appearance: none;
+  width: 100%;
+}
+/* line 2464, ../sass/ultraligero.scss */
+.formulario-solicitud select:focus, .formulario-solicitud select:active {
+  outline: 0;
+  color: #993399;
+  border-bottom-color: #993399;
+}
+/* line 2469, ../sass/ultraligero.scss */
+.formulario-solicitud select:disabled {
+  background-color: transparent;
+}
+/* line 2473, ../sass/ultraligero.scss */
+.formulario-solicitud textarea {
+  margin-top: 20px;
+  padding: 20px;
+  resize: none;
+  border: none;
+  border-bottom: 2px solid #993399;
+  color: #993399;
+  font-size: 18px;
+  font-family: "Source", sans-serif;
+  background-color: white;
+}
+/* line 2483, ../sass/ultraligero.scss */
+.formulario-solicitud input[type=text] {
+  padding-bottom: 4px;
+  margin-bottom: 20px;
+  margin-top: 2px;
+  color: #993399;
+  font-size: 18px;
+  border: none;
+  border-bottom: 2px solid #993399;
+  width: 100%;
+  font-family: "Source", sans-serif;
+  background-color: transparent;
+}
+/* line 2495, ../sass/ultraligero.scss */
+.formulario-solicitud input[type=text]:focus {
+  color: #993399;
+  border-bottom: 2px solid #993399;
+}
+/* line 2499, ../sass/ultraligero.scss */
+.formulario-solicitud input[type=text]:disabled {
+  background-color: transparent;
+}
+/* line 2502, ../sass/ultraligero.scss */
+.formulario-solicitud input[type=button], .formulario-solicitud input[type=submit] {
+  padding: 0px;
+  background: transparent;
+  border: 0 none;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Source", sans-serif;
+  margin: 0px;
+  text-transform: uppercase;
+  margin-top: -2px;
+  letter-spacing: 1px;
+}
+/* line 2515, ../sass/ultraligero.scss */
+.formulario-solicitud input[type=radio], .formulario-solicitud input[type=checkbox] {
+  display: none;
+}
+/* line 2519, ../sass/ultraligero.scss */
+.formulario-solicitud input[type=radio] + label, .formulario-solicitud input[type=checkbox] + label {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #666666;
+}
+/* line 2533, ../sass/ultraligero.scss */
+.formulario-solicitud input[type=submit] {
+  border-radius: 20px;
+  font-family: "Source", sans-serif;
+  border: 0px;
+  font-size: 20px;
+  width: 100%;
+  line-height: 40px;
+  color: white;
+  margin-bottom: 40px;
+  -webkit-appearance: none;
+  background-color: #993399;
+  margin-bottom: 0px !important;
+  text-decoration: none;
+  text-align: center;
+}
+/* line 2550, ../sass/ultraligero.scss */
+.formulario-solicitud .boton-submit {
+  padding-bottom: 40px;
+}
+/* line 2553, ../sass/ultraligero.scss */
+.formulario-solicitud input[type=radio]:checked + label, .formulario-solicitud input[type=checkbox]:checked + label {
+  color: white;
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  background-color: #993399;
+}
+
+/* line 2563, ../sass/ultraligero.scss */
+.boton-prev {
+  text-align: center;
+  margin-top: 40px;
+  background-color: #993399;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+/* line 2572, ../sass/ultraligero.scss */
+.boton-prev a {
+  width: 100%;
+  color: white;
+  text-decoration: none;
+}
+
+/* line 2578, ../sass/ultraligero.scss */
+.boton-next {
+  text-align: center;
+  margin-top: 40px;
+  background-color: #993399;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+/* line 2587, ../sass/ultraligero.scss */
+.boton-next a {
+  width: 100%;
+  color: white;
+  text-decoration: none;
+}
+
+/* line 2593, ../sass/ultraligero.scss */
+.mensaje-recibido {
+  text-align: center;
+  margin-bottom: 40px;
+}
+/* line 2596, ../sass/ultraligero.scss */
+.mensaje-recibido h3 {
+  text-align: center;
+  color: #330033;
+  font-size: 20px;
+  line-height: 28px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+/* line 2604, ../sass/ultraligero.scss */
+.mensaje-recibido p {
+  text-align: center;
+  color: #330033;
+  font-size: 14px;
+  line-height: 20px;
+  padding-bottom: 20px;
+}
+/* line 2612, ../sass/ultraligero.scss */
+.mensaje-recibido strong {
+  width: 100%;
+  color: #993399;
+  text-decoration: none;
+}
+
+/* line 2619, ../sass/ultraligero.scss */
+.imagen-destacada-puesto img {
+  width: 100%;
+  height: auto;
+  padding-bottom: 20px;
+}
+
+/* line 2625, ../sass/ultraligero.scss */
+.redes-homenaje-single {
+  padding: 20px;
+  padding-left: 20px;
+  margin-top: 50px;
+}
+/* line 2629, ../sass/ultraligero.scss */
+.redes-homenaje-single .links-compartir {
+  float: right;
+  position: relative;
+  margin-left: 20px;
+}
+
+/* line 2635, ../sass/ultraligero.scss */
+.registro-accion, .registro-accion-vela {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 120;
+  padding-top: auto;
+  padding-bottom: auto;
+  background-color: white;
+  visibility: hidden;
+}
+/* line 2646, ../sass/ultraligero.scss */
+.registro-accion .titulo-formulario, .registro-accion-vela .titulo-formulario {
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #993399;
+}
+/* line 2651, ../sass/ultraligero.scss */
+.registro-accion .titulo-formulario .cerrar-formulario, .registro-accion-vela .titulo-formulario .cerrar-formulario {
+  cursor: pointer;
+  line-height: 20px;
+  text-align: left;
+  font-size: 12px;
+  color: white;
+}
+/* line 2659, ../sass/ultraligero.scss */
+.registro-accion .titulo-formulario .encabezado, .registro-accion-vela .titulo-formulario .encabezado {
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+  color: white;
+  font-weight: bold;
+}
+/* line 2668, ../sass/ultraligero.scss */
+.registro-accion .centrar-formulario, .registro-accion-vela .centrar-formulario {
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@media only screen and (max-width: 568px) {
+  /* line 2668, ../sass/ultraligero.scss */
+  .registro-accion .centrar-formulario, .registro-accion-vela .centrar-formulario {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    margin: 0;
+    position: relative;
+    top: 0%;
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
+/* line 2688, ../sass/ultraligero.scss */
+.registro-accion .imagenes, .registro-accion-vela .imagenes {
+  height: 0;
+  padding-bottom: 100%;
+  background-color: #993399;
+  border: 2px solid #993399;
+}
+
+/* line 2695, ../sass/ultraligero.scss */
+.homenaje-interactivo {
+  background-color: #993399;
+  color: white;
+  padding: 8px;
+  margin-bottom: 20px;
+  border-radius: 50px 50px 50px 50px;
+}
+/* line 2701, ../sass/ultraligero.scss */
+.homenaje-interactivo .icono-interactivo {
+  width: 20px;
+  height: 24px;
+  padding-top: 4px;
+  margin-right: 0px;
+}
+/* line 2707, ../sass/ultraligero.scss */
+.homenaje-interactivo h5 {
+  width: 100%;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 40px !important;
+  color: white;
+  letter-spacing: .2px;
+  text-decoration: none;
+  text-align: center;
+  padding-bottom: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+/* line 2721, ../sass/ultraligero.scss */
+.ofrenda-relacionada {
+  background-color: #ffccff;
+  margin-bottom: 20px !important;
+}
+/* line 2724, ../sass/ultraligero.scss */
+.ofrenda-relacionada img {
+  margin-bottom: 16px;
+  width: 100%;
+}
+/* line 2728, ../sass/ultraligero.scss */
+.ofrenda-relacionada .texto-ofrenda-relacionada {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 28px !important;
+  color: #330033;
+  letter-spacing: .2px;
+  text-decoration: none;
+  text-align: center;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+/* line 2742, ../sass/ultraligero.scss */
+.ofrenda-relacionada .quien-ofrenda-relacionada {
+  font-size: 20px;
+  line-height: 28px !important;
+  color: #330033;
+  font-style: italic;
+  font-weight: bold;
+  text-align: right;
+  padding-left: 16px !important;
+  padding-bottom: 16px !important;
+  padding-right: 16px !important;
+}
+
+/* line 2755, ../sass/ultraligero.scss */
+.selected-form {
+  border: 4px solid #993399 !important;
+  opacity: 1;
+}
+
+/* line 2759, ../sass/ultraligero.scss */
+.unselectected-form {
+  opacity: 0.8 !important;
+}
+
+/* line 2763, ../sass/ultraligero.scss */
+.slider-interactivo {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 300 !important;
+  top: 0px;
+  left: 0px;
+  background-color: white;
+}
+/* line 2772, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-persona {
+  background-color: #993399;
+  color: white;
+  text-align: center !important;
+}
+/* line 2776, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-persona h1 {
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+/* line 2782, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-persona h4 {
+  margin-top: 20px;
+  font-size: 24px;
+  line-height: 30px;
+  font-style: italic;
+}
+/* line 2789, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-persona .avatar-imagen {
+  text-align: center;
+}
+/* line 2792, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-persona .avatar-imagen img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+@media only screen and (max-width: 568px) {
+  /* line 2792, ../sass/ultraligero.scss */
+  .slider-interactivo .interactivo-persona .avatar-imagen img {
+    width: 200px;
+    height: 200px;
+  }
+}
+/* line 2805, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-vela {
+  background-color: black;
+  color: white;
+  text-align: center !important;
+}
+/* line 2809, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-vela .imagen-vela {
+  overflow: hidden;
+  width: 30%;
+  height: 80%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+/* line 2816, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-vela .imagen-vela img {
+  height: 100%;
+  width: auto;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+/* line 2825, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-vela .texto-vela {
+  width: 70%;
+  height: 80%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+/* line 2831, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-vela .texto-vela p {
+  font-style: italic;
+  color: white;
+  font-size: 40px;
+  line-height: 55px;
+  text-align: center;
+  padding-right: 20%;
+  position: absolute;
+  min-width: 70%;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+@media only screen and (max-width: 568px) {
+  /* line 2831, ../sass/ultraligero.scss */
+  .slider-interactivo .interactivo-vela .texto-vela p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+/* line 2850, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-vela .texto-vela span {
+  font-style: normal;
+  font-weight: bold;
+  display: block;
+  text-align: right;
+}
+/* line 2857, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-vela h1 {
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+/* line 2863, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-vela h4 {
+  margin-top: 20px;
+  font-size: 24px;
+  line-height: 30px;
+  font-style: italic;
+}
+/* line 2873, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: black;
+}
+/* line 2880, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-recuerdo {
+  background-color: #ffccff;
+  color: white;
+  text-align: center !important;
+}
+/* line 2884, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-recuerdo .imagen-recuerdo {
+  overflow: hidden;
+  width: 50%;
+  height: 80%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+/* line 2891, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-recuerdo .imagen-recuerdo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* line 2898, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-recuerdo .texto-recuerdo {
+  width: 50%;
+  height: 80%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+/* line 2904, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-recuerdo .texto-recuerdo p {
+  font-style: italic;
+  color: #993399;
+  font-size: 40px;
+  line-height: 55px;
+  text-align: left;
+  padding-right: 10%;
+  padding-left: 10%;
+  position: absolute;
+  min-width: 70%;
+  bottom: 10%;
+  width: 100%;
+}
+@media only screen and (max-width: 568px) {
+  /* line 2904, ../sass/ultraligero.scss */
+  .slider-interactivo .interactivo-recuerdo .texto-recuerdo p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+/* line 2922, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-recuerdo .texto-recuerdo span {
+  font-style: normal;
+  font-weight: bold;
+  display: block;
+  text-align: right;
+}
+/* line 2929, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-recuerdo h1 {
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+/* line 2935, ../sass/ultraligero.scss */
+.slider-interactivo .interactivo-recuerdo h4 {
+  margin-top: 20px;
+  font-size: 24px;
+  line-height: 30px;
+  font-style: italic;
+}
+/* line 2944, ../sass/ultraligero.scss */
+.slider-interactivo .cerrar-slider-interactivo {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  z-index: 200;
+  background-color: #993399;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+/* line 2957, ../sass/ultraligero.scss */
+.slider-interactivo .qrcode {
+  display: inline-block;
+  height: 100%;
+  padding: 20px;
+  background-color: white;
+  position: absolute;
+  left: 0px;
+}
+/* line 2965, ../sass/ultraligero.scss */
+.slider-interactivo .qrcode-ofrenda {
+  bottom: 0px;
+  right: 0px;
+  position: absolute;
+  z-index: 200;
+  color: white;
+  background-color: #993399;
+  height: 20%;
+  width: 100%;
+}
+/* line 2977, ../sass/ultraligero.scss */
+.slider-interactivo .qrcode-ofrenda .contenido-qr {
+  bottom: 0px;
+  right: 0px;
+  position: absolute;
+  padding: 20px;
+  z-index: 200;
+  height: 100%;
+  width: 80%;
+}
+@media only screen and (max-width: 568px) {
+  /* line 2977, ../sass/ultraligero.scss */
+  .slider-interactivo .qrcode-ofrenda .contenido-qr {
+    width: 60%;
+  }
+}
+/* line 2990, ../sass/ultraligero.scss */
+.slider-interactivo .qrcode-ofrenda .contenido-qr p {
+  color: white;
+  text-align: center !important;
+  position: absolute;
+  top: 50%;
+  padding: 20px;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 3000, ../sass/ultraligero.scss */
+.slider-interactivo .qrcode-ofrenda img {
+  height: 100% !important;
+}
+/* line 3006, ../sass/ultraligero.scss */
+.slider-interactivo .swiper-container {
+  width: 100%;
+  height: 100%;
+  z-index: 80;
+}
+/* line 3011, ../sass/ultraligero.scss */
+.slider-interactivo .swiper-slide {
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+/* line 3030, ../sass/ultraligero.scss */
+.slider-interactivo-vela {
+  visibility: hidden;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 300 !important;
+  top: 0px;
+  left: 0px;
+}
+/* line 3039, ../sass/ultraligero.scss */
+.slider-interactivo-vela .interactivo-vela {
+  background-color: black;
+  color: white;
+  text-align: center !important;
+}
+/* line 3043, ../sass/ultraligero.scss */
+.slider-interactivo-vela .interactivo-vela .imagen-vela {
+  overflow: hidden;
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+/* line 3050, ../sass/ultraligero.scss */
+.slider-interactivo-vela .interactivo-vela .imagen-vela img {
+  height: 100%;
+  width: auto;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+/* line 3059, ../sass/ultraligero.scss */
+.slider-interactivo-vela .interactivo-vela .texto-vela {
+  width: 70%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+/* line 3065, ../sass/ultraligero.scss */
+.slider-interactivo-vela .interactivo-vela .texto-vela p {
+  font-style: italic;
+  color: white;
+  font-size: 40px;
+  line-height: 55px;
+  text-align: center;
+  padding-right: 20%;
+  position: absolute;
+  min-width: 70%;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+@media only screen and (max-width: 568px) {
+  /* line 3065, ../sass/ultraligero.scss */
+  .slider-interactivo-vela .interactivo-vela .texto-vela p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+/* line 3084, ../sass/ultraligero.scss */
+.slider-interactivo-vela .interactivo-vela .texto-vela span {
+  font-style: normal;
+  font-weight: bold;
+  display: block;
+  text-align: right;
+}
+/* line 3091, ../sass/ultraligero.scss */
+.slider-interactivo-vela .interactivo-vela h1 {
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+/* line 3097, ../sass/ultraligero.scss */
+.slider-interactivo-vela .interactivo-vela h4 {
+  margin-top: 20px;
+  font-size: 24px;
+  line-height: 30px;
+  font-style: italic;
+}
+/* line 3107, ../sass/ultraligero.scss */
+.slider-interactivo-vela .cerrar-slider-vela {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  z-index: 200;
+  background-color: #993399;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+/* line 3122, ../sass/ultraligero.scss */
+.slider-interactivo-vela .swiper-container {
+  width: 100%;
+  height: 100%;
+  z-index: 80;
+}
+/* line 3127, ../sass/ultraligero.scss */
+.slider-interactivo-vela .swiper-slide {
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+/* line 3146, ../sass/ultraligero.scss */
+.slider-memorial {
+  visibility: hidden;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 200;
+  top: 0px;
+  left: 0px;
+  background-color: white;
+}
+/* line 3155, ../sass/ultraligero.scss */
+.slider-memorial .cerrar-slider-memorial {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  z-index: 200;
+  background-color: #993399;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+/* line 3168, ../sass/ultraligero.scss */
+.slider-memorial .swiper-pagination {
+  position: relative !important;
+  margin-top: 20px;
+}
+/* line 3171, ../sass/ultraligero.scss */
+.slider-memorial .swiper-pagination .swiper-pagination-bullet-active {
+  background: white;
+}
+/* line 3174, ../sass/ultraligero.scss */
+.slider-memorial .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border-radius: 100%;
+  border: 1.7px solid white;
+  background: #993399;
+}
+/* line 3183, ../sass/ultraligero.scss */
+.slider-memorial .swiper-container {
+  width: 100%;
+  height: 100%;
+  z-index: 80;
+}
+/* line 3188, ../sass/ultraligero.scss */
+.slider-memorial .swiper-slide {
+  text-align: left;
+  font-size: 18px;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+/* line 3205, ../sass/ultraligero.scss */
+.slider-memorial .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* line 3214, ../sass/ultraligero.scss */
+.velas .contenedor-vela {
+  overflow: auto;
+  white-space: nowrap;
+  padding-bottom: 30px;
+}
+/* line 3219, ../sass/ultraligero.scss */
+.velas .contenedor-vela .vela {
+  white-space: normal;
+  margin-right: 20px;
+  position: relative;
+  display: inline-block;
+}
+/* line 3224, ../sass/ultraligero.scss */
+.velas .contenedor-vela .vela .vela-texto {
+  width: 140px;
+}
+/* line 3228, ../sass/ultraligero.scss */
+.velas .contenedor-vela .vela .vela-container {
+  background-color: black;
+  width: 90px;
+  height: 90px;
+  margin-left: 30px;
+  margin-left: 30px;
+  display: inline-block;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* line 3241, ../sass/ultraligero.scss */
+.velas .contenedor-vela .vela .vela-container .icono-vela {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+/* line 3248, ../sass/ultraligero.scss */
+.velas .contenedor-vela .vela p {
+  white-space: normal;
+  width: 100%;
+  text-align: center;
+  color: black;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+/* line 3261, ../sass/ultraligero.scss */
+.mensajes-usuarios {
+  background-color: #ffccff;
+  padding: 20px !important;
+}
+/* line 3265, ../sass/ultraligero.scss */
+.mensajes-usuarios p {
+  text-align: center;
+  color: #993399;
+  font-size: 18px;
+  line-height: 30px;
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+}
+/* line 3273, ../sass/ultraligero.scss */
+.mensajes-usuarios a {
+  color: #993399;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* line 3280, ../sass/ultraligero.scss */
+.mensajes-usuarios .dar-flor, .mensajes-usuarios .encender-vela {
+  background-color: #993399;
+  width: 90px;
+  height: 90px;
+  display: inline-block;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+@media only screen and (max-width: 568px) {
+  /* line 3280, ../sass/ultraligero.scss */
+  .mensajes-usuarios .dar-flor, .mensajes-usuarios .encender-vela {
+    width: 58px;
+    height: 58px;
+  }
+}
+/* line 3293, ../sass/ultraligero.scss */
+.mensajes-usuarios .dar-flor .icono-footer, .mensajes-usuarios .encender-vela .icono-footer {
+  margin: 20px;
+  width: 50px;
+  height: 50px;
+}
+
+/* line 3301, ../sass/ultraligero.scss */
+.terminos_condiciones {
+  margin-bottom: 20px;
+  text-align: left;
+  color: #993399;
+  font-size: 12px !important;
+  line-height: 30px;
+}
+/* line 3309, ../sass/ultraligero.scss */
+.terminos_condiciones a {
+  color: #993399;
+}
